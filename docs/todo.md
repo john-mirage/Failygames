@@ -2,7 +2,7 @@
 
 ### Icon button
 
-1. rework hamburger icon: (2 options)
+1. [ ] rework hamburger icon: (2 options)
     - Replace custom menu icon with real svg icon.
     - Use existing line to animate the "icon" when drawer is open.
 
@@ -20,12 +20,18 @@
 
 1. [x] add search logic (vanillaJs or fuseJs)
 2. [x] add logic to target the good table/tab when submiting search
-3. [ ] Fix the table height to prevent user viewport to scroll top
+3. [x] Fix the table height to prevent user viewport to scroll top
+    - Current modification only get the first tab height because the other tabs are display none.
+    - Change the visibility type
+        - [x] set container with display flex and add carrousel logic and fix height
+        - OR set all tabs and play with z-index opacity and visibility and fix height
+    - below modifications allow us to animate table.
 4. [ ] Add filters ???
-5. [ ] by default, sort result by position
+5. [x] Auto sort team by points and add position property.
 6. [ ] Add button to clear user input.
-7. [ ] add debouncer for the user input (from lodash)
+7. [x] add debouncer for the user input (from lodash)
     - Consider using custom debounce function if it is easy enough to be copied from lodash
+8. [x] Add medals for the first positions (1, 2, 3)
 
 ### Timer (low)
 
@@ -43,4 +49,4 @@
 
 ### On load (high)
 
-1. [ ] Prevent initial animations to launch when opening page.
+1. [x] Prevent initial animations to launch when opening page.
