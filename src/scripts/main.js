@@ -1,13 +1,9 @@
-import '../styles/main.scss';
-import { mountDrawer, closeDrawerOnDesktop } from "./scripts/drawer";
-import { mountTimer } from "./scripts/timer";
-import {
-  mountFloatingActionButton,
-  showFloatingActionButtonOnScroll
-} from "./scripts/floating-action-button";
-import { fadeTopAppBarOnScroll } from "./scripts/top-app-bar";
-import { mountLeaderboard } from "./scripts/leaderboard";
-import "./styles/main.scss";
+import { mountDrawer, closeDrawerOnDesktop } from "@scripts/components/drawer";
+import { mountTimer } from "@scripts/components/timer";
+import { mountFloatingActionButton, showFloatingActionButtonOnScroll } from "@scripts/components/floating-action-button";
+import { fadeTopAppBarOnScroll } from "@scripts/components/top-app-bar";
+import { mountLeaderboard } from "@scripts/components/leaderboard";
+import "@styles/main.scss";
 
 /**
  * Previous vertical scroll value.
