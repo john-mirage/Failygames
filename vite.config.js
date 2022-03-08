@@ -9,6 +9,7 @@ export default defineConfig({
             '@pages': path.resolve(__dirname, 'src/pages'),
             '@scripts': path.resolve(__dirname, 'src/scripts'),
             '@styles': path.resolve(__dirname, 'src/styles'),
+            '@images': path.resolve(__dirname, 'src/images'),
         },
     },
 })
