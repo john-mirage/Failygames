@@ -78,5 +78,21 @@
     font-weight: 400;
     color: variables.$color-primary-text;
     white-space: nowrap;
+
+    &--with-medal {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      align-items: center;
+    }
+  }
+
+  &__medal {
+    width: 1.8rem;
+    height: auto;
+  }
+
+  &__position {
+    margin-right: 1rem;
   }
 }
