@@ -63,3 +63,8 @@ mountLeaderboard(globalJson, "leaderboard-global", "search-bar-global");
 mountLeaderboard(firstQualificationJson, "leaderboard-q1", "search-bar-q1");
 mountLeaderboard(secondQualificationJson, "leaderboard-q2", "search-bar-q2");
 mountLeaderboard(thirdQualificationJson, "leaderboard-q3", "search-bar-q3");
+
+
+window.addEventListener("load", () => {
+  document.body.classList.remove("preload");
+})
