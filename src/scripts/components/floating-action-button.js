@@ -3,7 +3,7 @@
  *
  * @constant {HTMLElement} floatingActionButton - The floating action button.
  */
- const floatingActionButton = document.getElementById("fab");
+ const floatingActionButton = document.getElementById("floating-action-button");
 
  /**
   * Set the vertical breakpoint that trigger the floating action button visibility.
