@@ -1,5 +1,11 @@
 ## Home page
 
+### Icon button
+
+1. rework hamburger icon: (2 options)
+    - Replace custom menu icon with real svg icon.
+    - Use existing line to animate the "icon" when drawer is open.
+
 ### Containers (high)
 
 1. [ ] Merge containers (top-app-bar container + container) and add modifiers
@@ -19,12 +25,12 @@
 5. [ ] by default, sort result by position
 6. [ ] Add button to clear user input.
 7. [ ] add debouncer for the user input (from lodash)
+    - Consider using custom debounce function if it is easy enough to be copied from lodash
 
 ### Timer (low)
 
 1. [ ] Create layer for the pannels (top pannel, bottom pannel, flipping pannel)
 2. [ ] add logic
-3. [ ] pray
 
 ### Tab list (high)
 
