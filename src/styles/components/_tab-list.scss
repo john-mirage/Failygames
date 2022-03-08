@@ -18,7 +18,6 @@
     flex-direction: column;
     width: 100%;
     height: auto;
-    margin-bottom: 2.4rem;
     border-bottom: 0.1rem solid rgba(0, 0, 0, 0.1);
     
     @media screen and (min-width: 768px) {
@@ -65,22 +64,39 @@
     transform: translateY(100%);
     transition: transform 150ms;
   }
-  
-  &__tab {
-    display: none;
-    flex-direction: column;
+
+  &__carousel {
+    display: block;
     width: 100%;
     height: auto;
+    overflow: hidden;
+  }
+
+  &__carousel-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: stretch;
+    width: 400%;
+    height: 100%;
+    transition: transform 300ms;
     margin-top: 2rem;
+  }
+  
+  &__tab {
+    display: flex;
+    flex-direction: column;
+    width: 25%;
+    height: auto;
     padding-left: 2rem;
     padding-right: 2rem;
   }
 }
 
-#tab-list-input-1:checked ~ #tab-1 { display: flex }
-#tab-list-input-2:checked ~ #tab-2 { display: flex }
-#tab-list-input-3:checked ~ #tab-3 { display: flex }
-#tab-list-input-4:checked ~ #tab-4 { display: flex }
+#tab-list-input-1:checked ~ .tab-list__carousel .tab-list__carousel-content { transform: translateX(0); }
+#tab-list-input-2:checked ~ .tab-list__carousel .tab-list__carousel-content { transform: translateX(-25%); }
+#tab-list-input-3:checked ~ .tab-list__carousel .tab-list__carousel-content { transform: translateX(-50%); }
+#tab-list-input-4:checked ~ .tab-list__carousel .tab-list__carousel-content { transform: translateX(-75%); }
 
 #tab-list-input-1:checked ~ .tab-list__controller #tab-list-label-1 { color: variables.$color-primary-text; }
 #tab-list-input-2:checked ~ .tab-list__controller #tab-list-label-2 { color: variables.$color-primary-text; }
