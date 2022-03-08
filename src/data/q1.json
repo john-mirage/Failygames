@@ -1,17 +1,14 @@
 [
-    {
-      "position": 1,
-      "team": "Lena Silvo",
-      "points": 1000
-    },
-    {
-      "position": 2,
-      "team": "Garry Green",
-      "points": 900
-    },
-    {
-      "position": 3,
-      "team": "Alexis Menpeur",
-      "points": 800
-    }
-  ]
+  {
+    "team": "Garry Green",
+    "points": 900
+  },
+  {
+    "team": "Lena Silvo",
+    "points": 1000
+  },
+  {
+    "team": "Alexis Menpeur",
+    "points": 800
+  }
+]

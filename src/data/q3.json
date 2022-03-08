@@ -1,17 +1,14 @@
 [
-    {
-      "position": 7,
-      "team": "Jenny Baker",
-      "points": 400
-    },
-    {
-      "position": 8,
-      "team": "Elina Deau",
-      "points": 300
-    },
-    {
-      "position": 9,
-      "team": "Ada Jackson",
-      "points": 300
-    }
-  ]
+  {
+    "team": "Elina Deau",
+    "points": 300
+  },
+  {
+    "team": "Ada Jackson",
+    "points": 300
+  },
+  {
+    "team": "Jenny Baker",
+    "points": 400
+  }
+]
