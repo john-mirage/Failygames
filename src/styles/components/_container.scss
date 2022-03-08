@@ -1,0 +1,24 @@
+.container {
+    width: 100%;
+    padding-left: 1.6rem;
+    padding-right: 1.6rem;
+    padding-bottom: 10rem;
+    
+    @media screen and (min-width: 576px) {
+      width: 54.4rem;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    
+    @media screen and (min-width: 768px) {
+      width: 73.6rem;
+    }
+    
+    @media screen and (min-width: 1024px) {
+      width: 99.2rem;
+    }
+    
+    @media screen and (min-width: 1200px) {
+      width: 116.8rem;
+    }
+  }

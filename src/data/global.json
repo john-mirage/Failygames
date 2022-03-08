@@ -1,0 +1,47 @@
+[
+    {
+      "position": 1,
+      "team": "Lena Silvo",
+      "points": 1000
+    },
+    {
+      "position": 2,
+      "team": "Garry Green",
+      "points": 900
+    },
+    {
+      "position": 3,
+      "team": "Alexis Menpeur",
+      "points": 800
+    },
+    {
+      "position": 4,
+      "team": "Pamela Padilla",
+      "points": 700
+    },
+    {
+      "position": 5,
+      "team": "Quentin Cooper",
+      "points": 600
+    },
+    {
+      "position": 6,
+      "team": "Clea Dawson",
+      "points": 500
+    },
+    {
+      "position": 7,
+      "team": "Jenny Baker",
+      "points": 400
+    },
+    {
+      "position": 8,
+      "team": "Elina Deau",
+      "points": 300
+    },
+    {
+      "position": 9,
+      "team": "Ada Jackson",
+      "points": 300
+    }
+  ]

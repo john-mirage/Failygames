@@ -1,0 +1,125 @@
+@use '../variables';
+
+.top-app-bar {
+  position: fixed;
+  z-index: 95;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 6.4rem;
+  background-color: variables.$color-surface;
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  overflow: hidden;
+  transition: background-color 300ms;
+  
+  @media screen and (min-width: 1024px) {
+    height: 8rem;
+  }
+
+  &--dark {
+    background-color: rgba(0, 0, 0, 0.9);
+  }
+  
+  &__container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    padding-left: 1.6rem;
+    padding-right: 1.6rem;
+
+    @media screen and (min-width: 576px) {
+      width: 54.4rem;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    @media screen and (min-width: 768px) {
+      width: 73.6rem;
+    }
+
+    @media screen and (min-width: 1024px) {
+      width: 99.2rem;
+    }
+    
+    @media screen and (min-width: 1200px) {
+      width: 116.8rem;
+    }
+  }
+  
+  &__section {
+    flex: 1 1 0%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    
+    &--left {
+      justify-content: flex-start;
+    }
+    
+    &--middle {
+      justify-content: center;
+    }
+    
+    &--right {
+      justify-content: flex-end;
+    }
+  }
+
+  &__navigation {
+    display: none;
+  
+    @media screen and (min-width: 1024px) {
+      display: flex;
+      flex-direction: row;
+      width: auto;
+      height: 100%;
+    }
+  }
+  
+  &__link {
+    position: relative;
+    display: flex;
+    width: auto;
+    height: 100%;
+    text-decoration: none;
+    color: inherit;
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+  
+  &__label {
+    display: block;
+    width: auto;
+    height: auto;
+    margin: auto;
+    font-size: 1.4rem;
+    font-weight: 500;
+    letter-spacing: 0.06rem;
+    text-transform: uppercase;
+    color: variables.$color-primary-text;
+    transition: color 150ms;
+
+    &--on-dark {
+      color: variables.$color-surface;
+    }
+  }
+  
+  &__line {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 0.4rem;
+    background: linear-gradient(to right, variables.$color-primary, variables.$color-secondary);
+    transform: translateY(100%);
+    transition: transform 150ms;
+    
+    .top-app-bar__link:hover & {
+      transform: translateY(0);
+    }
+  }
+}

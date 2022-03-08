@@ -1,0 +1,37 @@
+@use '../variables';
+
+.floating-action-button {
+  display: flex;
+  position: fixed;
+  z-index: 100;
+  bottom: 0;
+  right: 1.6rem;
+  transform: translateY(100%);
+  width: 5.6rem;
+  height: 5.6rem;
+  border: none;
+  background-color: variables.$color-primary;
+  box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+  border-radius: 9999px;
+  cursor: pointer;
+  transition: transform 300ms, background-color 150ms;
+  
+  @media screen and (min-width: 576px) {
+    width: 6.4rem;
+    height: 6.4rem;
+  }
+  
+  &:hover {
+    background-color: variables.$color-secondary;
+  }
+  
+  &--visible {
+    transform: translateY(-1.6rem);
+  }
+  
+  &__icon {
+    display: block;
+    margin: auto;
+    fill: variables.$color-surface;
+  }
+}

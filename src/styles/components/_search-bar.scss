@@ -1,0 +1,43 @@
+@use '../variables';
+
+.search-bar {
+  position: relative;
+  width: 100%;
+  height: auto;
+  margin-bottom: 2rem;
+  
+  &__input {
+    display: block;
+    width: 100%;
+    height: 5.6rem;
+    border: none;
+    background-color: #f8fafc;
+    padding-left: 5.6rem;
+    padding-right: 1.8rem;
+    font-family: inherit;
+    font-size: 1.6rem;
+    font-weight: 500;
+    box-shadow: inset 0 2px 4px 0 rgb(0 0 0 / 0.05);
+    border-radius: 0.8rem;
+    color: variables.$color-primary-text;
+    
+    &:focus {
+      outline: 0.2rem solid variables.$color-primary;
+    }
+    
+    &::placeholder {
+      font-weight: 400;
+      color: variables.$color-secondary-text;
+    }
+  }
+  
+  &__icon {
+    position: absolute;
+    top: 50%;
+    left: 1.6rem;
+    width: 2.4rem;
+    height: 2.4rem;
+    fill: variables.$color-secondary-text;
+    transform: translateY(-50%);
+  }
+}
