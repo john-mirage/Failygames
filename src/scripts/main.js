@@ -4,6 +4,8 @@ import { mountTimer } from "@scripts/components/timer";
 import { mountFloatingActionButton, showFloatingActionButtonOnScroll } from "@scripts/components/floating-action-button";
 import { fadeTopAppBarOnScroll } from "@scripts/components/top-app-bar";
 import { mountLeaderboard } from "@scripts/components/leaderboard";
+import { setTabsMinHeight } from "@scripts/components/tab-list";
+
 import globalJson from "@data/global.json";
 import firstQualificationJson from "@data/q1.json";
 import secondQualificationJson from "@data/q2.json";
@@ -63,7 +65,7 @@ mountLeaderboard(globalJson, "leaderboard-global", "search-bar-global");
 mountLeaderboard(firstQualificationJson, "leaderboard-q1", "search-bar-q1");
 mountLeaderboard(secondQualificationJson, "leaderboard-q2", "search-bar-q2");
 mountLeaderboard(thirdQualificationJson, "leaderboard-q3", "search-bar-q3");
-
+setTabsMinHeight();
 
 window.addEventListener("load", () => {
   document.body.classList.remove("preload");
