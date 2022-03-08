@@ -1,17 +1,6 @@
 import Fuse from "fuse.js";
 
 /**
- * Get the leaderboard data from json file.
- *
- * @param {HTMLElement} jsonFilename - The filename of the json file.
- */
-async function getLeaderboardData(jsonFilename) {
-  return await fetch(`./src/data/${jsonFilename}.json`)
-    .then((response) => response.json())
-    .then((data) => data);
-}
-
-/**
  * Display The rows in the table.
  *
  * @param {object[]} tableData - The data objects.
@@ -56,13 +45,10 @@ function handleTableSearch(event, fuse, tableData, tableElement) {
  * @param {string} jsonFilename - The filename of the json file.
  * @param {string} tableId - The table html id (tbody).
  */
-export async function mountLeaderboard(jsonFilename, tableId, searchBarId) {
+export function mountLeaderboard(tableData, tableId, searchBarId) {
   const tableElement = document.getElementById(tableId);
   const searchBarElement = document.getElementById(searchBarId);
-  const tableData = await getLeaderboardData(jsonFilename);
   const fuse = new Fuse(tableData, { keys: ["team"] });
-  searchBarElement.addEventListener("keyup", (event) => {
-    handleTableSearch(event, fuse, tableData, tableElement);
-  });
+  searchBarElement.addEventListener("keyup", (event) => handleTableSearch(event, fuse, tableData, tableElement));
   displayLeaderboardData(tableData, tableElement);
 }

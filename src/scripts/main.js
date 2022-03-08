@@ -1,9 +1,14 @@
+import "@styles/main.scss";
 import { mountDrawer, closeDrawerOnDesktop } from "@scripts/components/drawer";
 import { mountTimer } from "@scripts/components/timer";
 import { mountFloatingActionButton, showFloatingActionButtonOnScroll } from "@scripts/components/floating-action-button";
 import { fadeTopAppBarOnScroll } from "@scripts/components/top-app-bar";
 import { mountLeaderboard } from "@scripts/components/leaderboard";
-import "@styles/main.scss";
+import globalJson from "@data/global.json";
+import firstQualificationJson from "@data/q1.json";
+import secondQualificationJson from "@data/q2.json";
+import thirdQualificationJson from "@data/q3.json";
+
 
 /**
  * Previous vertical scroll value.
@@ -46,13 +51,15 @@ function mountGlobalListeners() {
   window.addEventListener("resize", handleResize);
 }
 
-// Initialization
+/**
+ * Initialization.
+ */
 fadeTopAppBarOnScroll(window.scrollY);
 mountGlobalListeners();
 mountDrawer();
 mountTimer();
 mountFloatingActionButton();
-mountLeaderboard("global", "leaderboard-global", "search-bar-global");
-mountLeaderboard("q1", "leaderboard-q1", "search-bar-q1");
-mountLeaderboard("q2", "leaderboard-q2", "search-bar-q2");
-mountLeaderboard("q3", "leaderboard-q3", "search-bar-q3");
+mountLeaderboard(globalJson, "leaderboard-global", "search-bar-global");
+mountLeaderboard(firstQualificationJson, "leaderboard-q1", "search-bar-q1");
+mountLeaderboard(secondQualificationJson, "leaderboard-q2", "search-bar-q2");
+mountLeaderboard(thirdQualificationJson, "leaderboard-q3", "search-bar-q3");
