@@ -1,4 +1,5 @@
 import Fuse from "fuse.js";
+import { debounce } from "lodash";
 
 /**
  * Display The rows in the table.
@@ -31,10 +32,10 @@ function displayLeaderboardData(tableData, tableElement) {
  */
 function handleTableSearch(event, fuse, tableData, tableElement) {
   const userInput = event.target.value;
-  if (userInput.length > 2) {
+  if (userInput.length > 0) {
     const results = fuse.search(userInput).map((result) => result.item);
     displayLeaderboardData(results, tableElement);
-  } else if (userInput.length <= 0) {
+  } else {
     displayLeaderboardData(tableData, tableElement);
   }
 }
@@ -49,6 +50,7 @@ export function mountLeaderboard(tableData, tableId, searchBarId) {
   const tableElement = document.getElementById(tableId);
   const searchBarElement = document.getElementById(searchBarId);
   const fuse = new Fuse(tableData, { keys: ["team"] });
-  searchBarElement.addEventListener("keyup", (event) => handleTableSearch(event, fuse, tableData, tableElement));
+  const debouncedTableSearch = debounce(handleTableSearch, 500);
+  searchBarElement.addEventListener("keyup", (event) => debouncedTableSearch(event, fuse, tableData, tableElement));
   displayLeaderboardData(tableData, tableElement);
 }
