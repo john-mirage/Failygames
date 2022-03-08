@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600&display=swap" rel="stylesheet" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Failygames</title>
+  <script type="module" crossorigin src="/Failygames/assets/index.9b465596.js"></script>
+  <link rel="modulepreload" href="/Failygames/assets/vendor.784c4180.js">
+  <link rel="stylesheet" href="/Failygames/assets/index.d8a09556.css">
+</head>
+
+<body class="preload">
+
+    <!-- TOP APP BAR -->
+    <header class="top-app-bar" id="top-app-bar">
+        <div class="top-app-bar__container">
+            <div class="top-app-bar__section top-app-bar__section--left">
+                <button class="icon-button" id="hamburger-button">
+                    <span class="icon-button__line"></span>
+                    <span class="icon-button__line"></span>
+                    <span class="icon-button__line"></span>
+                </button>
+            </div>
+
+            <div class="top-app-bar__section top-app-bar__section--middle">
+                <!-- NAVIGATION -->
+                <nav class="top-app-bar__navigation">
+                    <a class="top-app-bar__link" href="#">
+                        <span class="top-app-bar__label">Acceuil</span>
+                        <div class="top-app-bar__line"></div>
+                    </a>
+                    <a class="top-app-bar__link" href="#">
+                        <span class="top-app-bar__label">Qualifications</span>
+                        <div class="top-app-bar__line"></div>
+                    </a>
+                    <a class="top-app-bar__link" href="#">
+                        <span class="top-app-bar__label">Equipes</span>
+                        <div class="top-app-bar__line"></div>
+                    </a>
+                    <a class="top-app-bar__link" href="#">
+                        <span class="top-app-bar__label">Live</span>
+                        <div class="top-app-bar__line"></div>
+                    </a>
+                </nav>
+            </div>
+
+            <div class="top-app-bar__section top-app-bar__section--right"></div>
+        </div>
+    </header>
+
+    <!-- HERO -->
+    <div class="hero" id="hero">
+        <img class="hero__logo" src="https://via.placeholder.com/150" alt="" />
+        <!-- TIMER -->
+        <div class="timer">
+            <div class="timer__display">
+                <div class="timer__time-container">
+                    <p class="timer__time" id="timer-days"></p>
+                </div>
+                <p class="timer__time-type">jours</p>
+            </div>
+            <div class="timer__display">
+                <div class="timer__time-container">
+                    <p class="timer__time" id="timer-hours"></p>
+                </div>
+                <p class="timer__time-type">heures</p>
+            </div>
+            <div class="timer__display">
+                <div class="timer__time-container">
+                    <p class="timer__time" id="timer-minutes"></p>
+                </div>
+                <p class="timer__time-type">minutes</p>
+            </div>
+            <div class="timer__display">
+                <div class="timer__time-container">
+                    <p class="timer__time" id="timer-seconds"></p>
+                </div>
+                <p class="timer__time-type">secondes</p>
+            </div>
+        </div>
+
+        <video class="hero__video" src="https://www.w3schools.com/howto/rain.mp4" playsinline autoplay muted
+            loop></video>
+
+        <div class="hero__overlay"></div>
+    </div>
+
+    <!-- CONTAINER -->
+    <main class="container">
+        <!-- PRESENTATION -->
+        <div class="presentation">
+            <div class="presentation__card">
+                <div class="presentation__image-container">
+                    <img class="presentation__image" src="https://www.w3schools.com/howto/img_woods_wide.jpg" alt="" />
+                </div>
+                <section class="presentation__info">
+                    <a class="presentation__link" href="#">
+                        <h1 class="presentation__title">Titre de la section</h1>
+                    </a>
+                    <p class="presentation__description">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam
+                        aut laborum, totam modi beatae eius provident, quo suscipit hic
+                        laboriosam recusandae optio, officia sit! Nemo praesentium aperiam
+                        aliquam tempora aliquid.
+                    </p>
+                </section>
+            </div>
+
+            <div class="presentation__card">
+                <section class="presentation__info presentation__info--first-order">
+                    <a class="presentation__link" href="#">
+                        <h1 class="presentation__title">Titre de la section</h1>
+                    </a>
+                    <p class="presentation__description">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam
+                        aut laborum, totam modi beatae eius provident, quo suscipit hic
+                        laboriosam recusandae optio, officia sit! Nemo praesentium aperiam
+                        aliquam tempora aliquid.
+                    </p>
+                </section>
+                <div class="presentation__image-container presentation__image-container--second-order">
+                    <img class="presentation__image" src="https://www.w3schools.com/howto/img_snow_wide.jpg" alt="" />
+                </div>
+            </div>
+
+            <div class="presentation__card">
+                <div class="presentation__image-container">
+                    <img class="presentation__image" src="https://www.w3schools.com/howto/img_lights_wide.jpg" alt="" />
+                </div>
+                <section class="presentation__info">
+                    <a class="presentation__link" href="#">
+                        <h1 class="presentation__title">Titre de la section</h1>
+                    </a>
+                    <p class="presentation__description">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam
+                        aut laborum, totam modi beatae eius provident, quo suscipit hic
+                        laboriosam recusandae optio, officia sit! Nemo praesentium aperiam
+                        aliquam tempora aliquid.
+                    </p>
+                </section>
+            </div>
+        </div>
+
+        <!-- TAB LIST -->
+        <div class="tab-list">
+            <input class="tab-list__input" id="tab-list-input-1" name="tab-list-controller" type="radio" checked />
+            <input class="tab-list__input" id="tab-list-input-2" name="tab-list-controller" type="radio" />
+            <input class="tab-list__input" id="tab-list-input-3" name="tab-list-controller" type="radio" />
+            <input class="tab-list__input" id="tab-list-input-4" name="tab-list-controller" type="radio" />
+
+            <div class="tab-list__controller">
+                <label class="tab-list__label" id="tab-list-label-1" for="tab-list-input-1">
+                    Général
+                    <div class="tab-list__line"></div>
+                </label>
+                <label class="tab-list__label" id="tab-list-label-2" for="tab-list-input-2">
+                    Qualification 1
+                    <div class="tab-list__line"></div>
+                </label>
+                <label class="tab-list__label" id="tab-list-label-3" for="tab-list-input-3">
+                    Qualification 2
+                    <div class="tab-list__line"></div>
+                </label>
+                <label class="tab-list__label" id="tab-list-label-4" for="tab-list-input-4">
+                    Qualification 3
+                    <div class="tab-list__line"></div>
+                </label>
+            </div>
+
+            <div class="tab-list__carousel" id="tab-list-carousel">
+                <div class="tab-list__carousel-content">
+                    <!-- TAB 1 -->
+                    <div class="tab-list__tab">
+                        <!-- SEARCH BAR -->
+                        <div class="search-bar">
+                            <input class="search-bar__input" id="search-bar-global" type="text" name=""
+                                placeholder="Rechercher une équipe" />
+                            <svg class="search-bar__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                <path d="M0 0h24v24H0V0z" fill="none" />
+                                <path
+                                    d="M15.5 14h-.79l-.28-.27c1.2-1.4 1.82-3.31 1.48-5.34-.47-2.78-2.79-5-5.59-5.34-4.23-.52-7.79 3.04-7.27 7.27.34 2.8 2.56 5.12 5.34 5.59 2.03.34 3.94-.28 5.34-1.48l.27.28v.79l4.25 4.25c.41.41 1.08.41 1.49 0 .41-.41.41-1.08 0-1.49L15.5 14zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z" />
+                            </svg>
+                            <div class="search-bar__line"></div>
+                        </div>
+                        <!-- LEADERBOARD -->
+                        <div class="leaderboard">
+                            <div class="leaderboard__container">
+                                <div class="leaderboard__content">
+                                    <table class="leaderboard__table">
+                                        <thead class="leaderboard__head">
+                                            <tr>
+                                                <th class="leaderboard__header" scope="col">Position</th>
+                                                <th class="leaderboard__header" scope="col">Équipe</th>
+                                                <th class="leaderboard__header" scope="col">Points</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="leaderboard-global"></tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- TAB 2 -->
+                    <div class="tab-list__tab">
+                        <!-- SEARCH BAR -->
+                        <div class="search-bar">
+                            <input class="search-bar__input" id="search-bar-q1" type="text" name=""
+                                placeholder="Rechercher une équipe" />
+                            <svg class="search-bar__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                <path d="M0 0h24v24H0V0z" fill="none" />
+                                <path
+                                    d="M15.5 14h-.79l-.28-.27c1.2-1.4 1.82-3.31 1.48-5.34-.47-2.78-2.79-5-5.59-5.34-4.23-.52-7.79 3.04-7.27 7.27.34 2.8 2.56 5.12 5.34 5.59 2.03.34 3.94-.28 5.34-1.48l.27.28v.79l4.25 4.25c.41.41 1.08.41 1.49 0 .41-.41.41-1.08 0-1.49L15.5 14zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z" />
+                            </svg>
+                            <div class="search-bar__line"></div>
+                        </div>
+                        <!-- LEADERBOARD -->
+                        <div class="leaderboard">
+                            <div class="leaderboard__container">
+                                <div class="leaderboard__content">
+                                    <table class="leaderboard__table">
+                                        <thead class="leaderboard__head">
+                                            <tr>
+                                                <th class="leaderboard__header" scope="col">Position</th>
+                                                <th class="leaderboard__header" scope="col">Équipe</th>
+                                                <th class="leaderboard__header" scope="col">Points</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="leaderboard-q1"></tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- TAB 3 -->
+                    <div class="tab-list__tab">
+                        <!-- SEARCH BAR -->
+                        <div class="search-bar">
+                            <input class="search-bar__input" id="search-bar-q2" type="text" name=""
+                                placeholder="Rechercher une équipe" />
+                            <svg class="search-bar__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                <path d="M0 0h24v24H0V0z" fill="none" />
+                                <path
+                                    d="M15.5 14h-.79l-.28-.27c1.2-1.4 1.82-3.31 1.48-5.34-.47-2.78-2.79-5-5.59-5.34-4.23-.52-7.79 3.04-7.27 7.27.34 2.8 2.56 5.12 5.34 5.59 2.03.34 3.94-.28 5.34-1.48l.27.28v.79l4.25 4.25c.41.41 1.08.41 1.49 0 .41-.41.41-1.08 0-1.49L15.5 14zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z" />
+                            </svg>
+                            <div class="search-bar__line"></div>
+                        </div>
+                        <!-- LEADERBOARD -->
+                        <div class="leaderboard">
+                            <div class="leaderboard__container">
+                                <div class="leaderboard__content">
+                                    <table class="leaderboard__table">
+                                        <thead class="leaderboard__head">
+                                            <tr>
+                                                <th class="leaderboard__header" scope="col">Position</th>
+                                                <th class="leaderboard__header" scope="col">Équipe</th>
+                                                <th class="leaderboard__header" scope="col">Points</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="leaderboard-q2"></tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- TAB 4 -->
+                    <div class="tab-list__tab">
+                        <!-- SEARCH BAR -->
+                        <div class="search-bar">
+                            <input class="search-bar__input" id="search-bar-q3" type="text" name=""
+                                placeholder="Rechercher une équipe" />
+                            <svg class="search-bar__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                <path d="M0 0h24v24H0V0z" fill="none" />
+                                <path
+                                    d="M15.5 14h-.79l-.28-.27c1.2-1.4 1.82-3.31 1.48-5.34-.47-2.78-2.79-5-5.59-5.34-4.23-.52-7.79 3.04-7.27 7.27.34 2.8 2.56 5.12 5.34 5.59 2.03.34 3.94-.28 5.34-1.48l.27.28v.79l4.25 4.25c.41.41 1.08.41 1.49 0 .41-.41.41-1.08 0-1.49L15.5 14zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z" />
+                            </svg>
+                            <div class="search-bar__line"></div>
+                        </div>
+                        <!-- LEADERBOARD -->
+                        <div class="leaderboard">
+                            <div class="leaderboard__container">
+                                <div class="leaderboard__content">
+                                    <table class="leaderboard__table">
+                                        <thead class="leaderboard__head">
+                                            <tr>
+                                                <th class="leaderboard__header" scope="col">Position</th>
+                                                <th class="leaderboard__header" scope="col">Équipe</th>
+                                                <th class="leaderboard__header" scope="col">Points</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="leaderboard-q3"></tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SPONSOR LIST -->
+        <footer class="sponsor-list">
+            <div class="sponsor-list__sponsor">
+                <img class="sponsor-list__logo" src="https://via.placeholder.com/150" alt="" />
+                <div class="sponsor-list__info">
+                    <h2 class="sponsor-list__title">Titre du sponsor</h2>
+                    <p class="sponsor-list__subtitle">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum at
+                        quibusdam atque ut.
+                    </p>
+                </div>
+            </div>
+
+            <div class="sponsor-list__sponsor">
+                <img class="sponsor-list__logo" src="https://via.placeholder.com/150" alt="" />
+                <div class="sponsor-list__info">
+                    <h2 class="sponsor-list__title">Titre du sponsor</h2>
+                    <p class="sponsor-list__subtitle">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum at
+                        quibusdam atque ut.
+                    </p>
+                </div>
+            </div>
+
+            <div class="sponsor-list__sponsor">
+                <img class="sponsor-list__logo" src="https://via.placeholder.com/150" alt="" />
+                <div class="sponsor-list__info">
+                    <h2 class="sponsor-list__title">Titre du sponsor</h2>
+                    <p class="sponsor-list__subtitle">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum at
+                        quibusdam atque ut.
+                    </p>
+                </div>
+            </div>
+
+            <div class="sponsor-list__sponsor">
+                <img class="sponsor-list__logo" src="https://via.placeholder.com/150" alt="" />
+                <div class="sponsor-list__info">
+                    <h2 class="sponsor-list__title">Titre du sponsor</h2>
+                    <p class="sponsor-list__subtitle">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum at
+                        quibusdam atque ut.
+                    </p>
+                </div>
+            </div>
+
+            <div class="sponsor-list__sponsor">
+                <img class="sponsor-list__logo" src="https://via.placeholder.com/150" alt="" />
+                <div class="sponsor-list__info">
+                    <h2 class="sponsor-list__title">Titre du sponsor</h2>
+                    <p class="sponsor-list__subtitle">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum at
+                        quibusdam atque ut.
+                    </p>
+                </div>
+            </div>
+
+            <div class="sponsor-list__sponsor">
+                <img class="sponsor-list__logo" src="https://via.placeholder.com/150" alt="" />
+                <div class="sponsor-list__info">
+                    <h2 class="sponsor-list__title">Titre du sponsor</h2>
+                    <p class="sponsor-list__subtitle">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum at
+                        quibusdam atque ut.
+                    </p>
+                </div>
+            </div>
+        </footer>
+    </main>
+
+    <!-- DRAWER -->
+    <aside class="drawer" id="drawer">
+        <div class="drawer__logo">
+            <div class="logo"></div>
+        </div>
+        <nav class="drawer__navigation">
+            <a class="drawer__link" href="#">
+                Acceuil
+                <div class="drawer__line"></div>
+            </a>
+            <a class="drawer__link" href="#">
+                Qualifications
+                <div class="drawer__line"></div>
+            </a>
+            <a class="drawer__link" href="#">
+                Equipes
+                <div class="drawer__line"></div>
+            </a>
+        </nav>
+    </aside>
+
+    <!-- FLOATING ACTION BUTTON -->
+    <button class="floating-action-button" id="floating-action-button">
+        <svg class="floating-action-button__icon" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24"
+            width="24px">
+            <path d="M0 0h24v24H0V0z" fill="none" />
+            <path d="M4 12l1.41 1.41L11 7.83V20h2V7.83l5.58 5.59L20 12l-8-8-8 8z" />
+        </svg>
+    </button>
+
+    <!-- OVERLAY -->
+    <div class="scrim" id="scrim"></div>
+
+
+    
+</body>
+
+</html>
