@@ -51,37 +51,71 @@
 
     <!-- HERO -->
     <div class="hero" id="hero">
-        <img class="hero__logo" src="https://via.placeholder.com/150" alt="" />
+        <img class="hero__logo" src="" alt="" />
         <!-- TIMER -->
         <div class="timer">
-            <div class="timer__display">
-                <div class="timer__time-container">
-                    <p class="timer__time" id="timer-days"></p>
+
+            <!-- DAYS -->
+            <div class="timer__display" id="days-display">
+                <!-- TOP PANNEL -->
+                <div class="timer__pannel timer__pannel--top">
+                    <span class="timer__number timer__number--bottom" id="days-next"></span>
+                    <div class="timer__overlay"></div>
                 </div>
-                <p class="timer__time-type">jours</p>
-            </div>
-            <div class="timer__display">
-                <div class="timer__time-container">
-                    <p class="timer__time" id="timer-hours"></p>
+                <!-- BOTTOM PANNEL -->
+                <div class="timer__pannel timer__pannel--bottom">
+                    <span class="timer__number timer__number--top" id="days-current"></span>
                 </div>
-                <p class="timer__time-type">heures</p>
+                <p class="timer__unit">jours</p>
             </div>
-            <div class="timer__display">
-                <div class="timer__time-container">
-                    <p class="timer__time" id="timer-minutes"></p>
+
+            <!-- HOURS -->
+            <div class="timer__display" id="hours-display">
+                <!-- TOP PANNEL -->
+                <div class="timer__pannel timer__pannel--top">
+                    <span class="timer__number timer__number--bottom" id="hours-next"></span>
+                    <div class="timer__overlay"></div>
                 </div>
-                <p class="timer__time-type">minutes</p>
-            </div>
-            <div class="timer__display">
-                <div class="timer__time-container">
-                    <p class="timer__time" id="timer-seconds"></p>
+                <!-- BOTTOM PANNEL -->
+                <div class="timer__pannel timer__pannel--bottom">
+                    <span class="timer__number timer__number--top" id="hours-current"></span>
                 </div>
-                <p class="timer__time-type">secondes</p>
+                <p class="timer__unit">Heures</p>
             </div>
+
+            <!-- MINUTES -->
+            <div class="timer__display" id="minutes-display">
+                <!-- TOP PANNEL -->
+                <div class="timer__pannel timer__pannel--top">
+                    <span class="timer__number timer__number--bottom" id="minutes-next"></span>
+                    <div class="timer__overlay"></div>
+                </div>
+                <!-- BOTTOM PANNEL -->
+                <div class="timer__pannel timer__pannel--bottom">
+                    <span class="timer__number timer__number--top" id="minutes-current"></span>
+                </div>
+                <p class="timer__unit">Minutes</p>
+            </div>
+
+            <!-- SECONDS -->
+            <div class="timer__display" id="seconds-display">
+                <!-- TOP PANNEL -->
+                <div class="timer__pannel timer__pannel--top">
+                    <span class="timer__number timer__number--bottom" id="seconds-next"></span>
+                    <div class="timer__overlay"></div>
+                </div>
+                <!-- BOTTOM PANNEL -->
+                <div class="timer__pannel timer__pannel--bottom">
+                    <span class="timer__number timer__number--top" id="seconds-current"></span>
+                </div>
+                <p class="timer__unit">Secondes</p>
+            </div>
+
         </div>
 
-        <video class="hero__video" src="https://www.w3schools.com/howto/rain.mp4" playsinline autoplay muted
-            loop></video>
+        <!--
+        <video class="hero__video" src="https://www.w3schools.com/howto/rain.mp4" playsinline autoplay muted loop></video>
+        -->
 
         <div class="hero__overlay"></div>
     </div>
@@ -304,7 +338,7 @@
         <!-- SPONSOR LIST -->
         <footer class="sponsor-list">
             <div class="sponsor-list__sponsor">
-                <img class="sponsor-list__logo" src="https://via.placeholder.com/150" alt="" />
+                <img class="sponsor-list__logo" src="" alt="" />
                 <div class="sponsor-list__info">
                     <h2 class="sponsor-list__title">Titre du sponsor</h2>
                     <p class="sponsor-list__subtitle">
@@ -315,7 +349,7 @@
             </div>
 
             <div class="sponsor-list__sponsor">
-                <img class="sponsor-list__logo" src="https://via.placeholder.com/150" alt="" />
+                <img class="sponsor-list__logo" src="" alt="" />
                 <div class="sponsor-list__info">
                     <h2 class="sponsor-list__title">Titre du sponsor</h2>
                     <p class="sponsor-list__subtitle">
@@ -326,7 +360,7 @@
             </div>
 
             <div class="sponsor-list__sponsor">
-                <img class="sponsor-list__logo" src="https://via.placeholder.com/150" alt="" />
+                <img class="sponsor-list__logo" src="" alt="" />
                 <div class="sponsor-list__info">
                     <h2 class="sponsor-list__title">Titre du sponsor</h2>
                     <p class="sponsor-list__subtitle">
@@ -337,7 +371,7 @@
             </div>
 
             <div class="sponsor-list__sponsor">
-                <img class="sponsor-list__logo" src="https://via.placeholder.com/150" alt="" />
+                <img class="sponsor-list__logo" src="" alt="" />
                 <div class="sponsor-list__info">
                     <h2 class="sponsor-list__title">Titre du sponsor</h2>
                     <p class="sponsor-list__subtitle">
@@ -348,7 +382,7 @@
             </div>
 
             <div class="sponsor-list__sponsor">
-                <img class="sponsor-list__logo" src="https://via.placeholder.com/150" alt="" />
+                <img class="sponsor-list__logo" src="" alt="" />
                 <div class="sponsor-list__info">
                     <h2 class="sponsor-list__title">Titre du sponsor</h2>
                     <p class="sponsor-list__subtitle">
@@ -359,7 +393,7 @@
             </div>
 
             <div class="sponsor-list__sponsor">
-                <img class="sponsor-list__logo" src="https://via.placeholder.com/150" alt="" />
+                <img class="sponsor-list__logo" src="" alt="" />
                 <div class="sponsor-list__info">
                     <h2 class="sponsor-list__title">Titre du sponsor</h2>
                     <p class="sponsor-list__subtitle">

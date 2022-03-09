@@ -1,8 +1,19 @@
 // Get all the DOM elements for the timer.
-const timeDays = document.getElementById("timer-days");
-const timeHours = document.getElementById("timer-hours");
-const timeMinutes = document.getElementById("timer-minutes");
-const timeSeconds = document.getElementById("timer-seconds");
+const daysDisplay = document.getElementById("days-display");
+const daysNext = document.getElementById("days-next");
+const daysCurrent = document.getElementById("days-current");
+
+const hoursDisplay = document.getElementById("hours-display");
+const hoursNext = document.getElementById("hours-next");
+const hoursCurrent = document.getElementById("hours-current");
+
+const minutesDisplay = document.getElementById("minutes-display");
+const minutesNext = document.getElementById("minutes-next");
+const minutesCurrent = document.getElementById("minutes-current");
+
+const secondsDisplay = document.getElementById("seconds-display");
+const secondsNext = document.getElementById("seconds-next");
+const secondsCurrent = document.getElementById("seconds-current");
 
 /**
  * Set the event date time.
@@ -11,35 +22,10 @@ const timeSeconds = document.getElementById("timer-seconds");
  */
 const EVENT_DATE_TIME = "2022-03-20T20:00:00";
 
-/**
- * Previous time left.
- *
- * This variable is used to prevent the re-render of the time units that are unchanged since
- * the previous time left.
- *
- * @example
- * ->13<- 10 00 00  will change to ->13<- 09 59 59
- * 13 do not need to be re-render on the DOM.
- */
-let previousTimeLeft = false;
-
-/**
- * Current time left.
- *
- * This variable is used as a reference.
- *
- * This variable is also used to prevent the re-render of the time units that are unchanged since
- * the previous time left.
- *
- * @example
- * ->13<- 10 00 00  will change to ->13<- 09 59 59
- * 13 do not need to be re-render on the DOM.
- */
-let currentTimeLeft = getTimeLeft();
-
-/**
- * Initial interval state.
- */
+let currentTime = 0;
+let currentFormatedTime = {};
+let nextTime = 0;
+let nextFormatedTime = {};
 let timerInterval = false;
 
 /**
@@ -78,6 +64,39 @@ function getFormatedTime(seconds) {
 }
 
 /**
+ * 
+ * @param {*} displayCurrentTime 
+ * @param {*} displayNextTime 
+ * @param {*} unit 
+ */
+function createFlipPannel(displayCurrentTimeElt, displayCurrentTime, displayNextTime, display) {
+  const pannel = document.createElement("div");
+  const face = document.createElement("div");
+  const back = document.createElement("div");
+  const bottomNumber = document.createElement("span");
+  const topNumber = document.createElement("span");
+  const overlay = document.createElement("div");
+  pannel.classList.add("timer__pannel", "timer__pannel--flip");
+  face.classList.add("timer__face", "timer__face--front");
+  back.classList.add("timer__face", "timer__face--back");
+  bottomNumber.classList.add("timer__number", "timer__number--bottom");
+  topNumber.classList.add("timer__number", "timer__number--top");
+  overlay.classList.add("timer__overlay");
+  bottomNumber.innerText = displayCurrentTime;
+  topNumber.innerText = displayNextTime;
+  pannel.appendChild(face);
+  face.appendChild(bottomNumber);
+  face.appendChild(overlay);
+  pannel.appendChild(back);
+  back.appendChild(topNumber);
+  display.appendChild(pannel);
+  setTimeout(() => {
+    displayCurrentTimeElt.innerText = displayNextTime;
+    display.removeChild(pannel);
+  }, 900);
+}
+
+/**
  * Display the time in the DOM, Only change the inner text.
  *
  * on the first call lastTimeLeft = false.
@@ -86,42 +105,48 @@ function getFormatedTime(seconds) {
  * lastTimeLeft -> boolean (false) | lastTimeLeft.days -> undefined
  *
  * Conditions prevents the DOM to be updated each seconds when it is not needed.
- *
- * @param {number} seconds - The time in seconds.
  */
-function displayTime(seconds = currentTimeLeft) {
-  const time = getFormatedTime(seconds);
-  if (time.days !== previousTimeLeft.days) timeDays.innerText = time.days;
-  if (time.hours !== previousTimeLeft.hours) timeHours.innerText = time.hours;
-  if (time.minutes !== previousTimeLeft.minutes)
-    timeMinutes.innerText = time.minutes;
-  timeSeconds.innerText = time.seconds;
-  previousTimeLeft = time;
-}
-
-/**
- * Decrease the time by one second.
- *
- * If the time is 0, the function will unmount the timer.
- */
-function decreaseTime() {
-  currentTimeLeft = currentTimeLeft - 1;
-  displayTime(currentTimeLeft);
-  if (currentTimeLeft <= 0) unMountTimer();
+function displayTime(initialCall = false) {
+  if (currentFormatedTime.days !== nextFormatedTime.days || initialCall) {
+    daysNext.innerText = nextFormatedTime.days;
+    daysCurrent.innerText = currentFormatedTime.days;
+    if (!initialCall) createFlipPannel(daysCurrent, currentFormatedTime.days, nextFormatedTime.days, daysDisplay);
+  }
+  if (currentFormatedTime.hours !== nextFormatedTime.hours || initialCall) {
+    hoursNext.innerText = nextFormatedTime.hours;
+    hoursCurrent.innerText = currentFormatedTime.hours;
+    if (!initialCall) createFlipPannel(hoursCurrent, currentFormatedTime.hours, nextFormatedTime.hours, hoursDisplay);
+  }
+  if (currentFormatedTime.minutes !== nextFormatedTime.minutes || initialCall) {
+    minutesNext.innerText = nextFormatedTime.minutes;
+    minutesCurrent.innerText = currentFormatedTime.minutes;
+    if (!initialCall) createFlipPannel(minutesCurrent, currentFormatedTime.minutes, nextFormatedTime.minutes, minutesDisplay);
+  }
+  secondsNext.innerText = nextFormatedTime.seconds;
+  secondsCurrent.innerText = currentFormatedTime.seconds;
+  createFlipPannel(secondsCurrent, currentFormatedTime.seconds, nextFormatedTime.seconds, secondsDisplay);
 }
 
 /**
  * Mount the timer.
  */
 export function mountTimer() {
-  displayTime();
-  timerInterval = setInterval(decreaseTime, 1000);
-}
-
-/**
- * Unmount the timer.
- */
-export function unMountTimer() {
-  clearInterval(timerInterval);
-  timerInterval = false;
+  const timeLeft = getTimeLeft();
+  currentTime = timeLeft;
+  currentFormatedTime = getFormatedTime(currentTime);
+  nextTime = currentTime - 1;
+  nextFormatedTime = getFormatedTime(nextTime);
+  displayTime(true);
+  timerInterval = setInterval(() => {
+    displayTime();
+    if (currentTime <= 0) {
+      clearInterval(timerInterval);
+      timerInterval = false;
+    } else {
+      currentTime = nextTime;
+      currentFormatedTime = nextFormatedTime;
+      nextTime = nextTime - 1;
+      nextFormatedTime = getFormatedTime(nextTime);
+    }
+  }, 1000);
 }
