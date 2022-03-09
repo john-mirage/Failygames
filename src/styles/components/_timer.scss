@@ -32,7 +32,6 @@
   z-index: 10;
   display: flex;
   justify-content: center;
-  background-color: variables.$color-primary;
   overflow: hidden;
 }
 
@@ -46,7 +45,6 @@
   height: 100%;
   backface-visibility: hidden;
   overflow: hidden;
-  background-color: variables.$color-primary;
 }
 
 @mixin number {
@@ -82,7 +80,7 @@
     border-radius: 0.4rem;
     background-color: variables.$color-primary;
     box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
-    perspective: 1000px;
+    perspective: 800px;
   }
   
   &__pannel {
@@ -92,18 +90,18 @@
       @include fixedPannel;
       top: 0;
       align-items: flex-end;
+      background-color: #15803d;
     }
 
     &--bottom {
       @include fixedPannel;
       bottom: 0;
       align-items: flex-start;
+      background-color: variables.$color-primary;
     }
 
     &--flip {
-      width: 80%;
-      margin-left: 10%;
-      margin-right: 10%;
+      width: 100%;
       z-index: 20;
       top: 0;
       transform-origin: bottom;
@@ -118,13 +116,15 @@
 
     &--front {
       align-items: flex-end;
-      animation: backfaceFix 500ms linear;
-      opacity: 0;
+      //animation: backfaceFix 500ms linear;
+      //opacity: 0;
+      background-color: #15803d;
     }
 
     &--back {
       align-items: flex-start;
       transform: rotateY(180deg) rotate(180deg);
+      background-color: variables.$color-primary;
     }
   }
 
@@ -138,15 +138,6 @@
     &--bottom {
       transform: translateY(50%);
     }
-  }
-
-  &__overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.2);
   }
   
   &__unit {

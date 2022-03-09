@@ -75,18 +75,15 @@ function createFlipPannel(displayCurrentTimeElt, displayCurrentTime, displayNext
   const back = document.createElement("div");
   const bottomNumber = document.createElement("span");
   const topNumber = document.createElement("span");
-  const overlay = document.createElement("div");
   pannel.classList.add("timer__pannel", "timer__pannel--flip");
   face.classList.add("timer__face", "timer__face--front");
   back.classList.add("timer__face", "timer__face--back");
   bottomNumber.classList.add("timer__number", "timer__number--bottom");
   topNumber.classList.add("timer__number", "timer__number--top");
-  overlay.classList.add("timer__overlay");
   bottomNumber.innerText = displayCurrentTime;
   topNumber.innerText = displayNextTime;
   pannel.appendChild(face);
   face.appendChild(bottomNumber);
-  face.appendChild(overlay);
   pannel.appendChild(back);
   back.appendChild(topNumber);
   display.appendChild(pannel);
