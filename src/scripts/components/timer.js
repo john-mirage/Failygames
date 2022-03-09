@@ -1,3 +1,5 @@
+import { gsap } from 'gsap';
+
 // Get all the DOM elements for the timer.
 const daysDisplay = document.getElementById("days-display");
 const daysNext = document.getElementById("days-next");
@@ -87,6 +89,7 @@ function createFlipPannel(displayCurrentTimeElt, displayCurrentTime, displayNext
   pannel.appendChild(back);
   back.appendChild(topNumber);
   display.appendChild(pannel);
+  gsap.to(".timer__pannel--flip", { rotationX: -180, duration: 0.5 });
   setTimeout(() => {
     displayCurrentTimeElt.innerText = displayNextTime;
     display.removeChild(pannel);

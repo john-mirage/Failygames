@@ -1,14 +1,5 @@
 @use '../variables';
 
-@keyframes flip {
-  from {
-    transform: rotateX(0);
-  }
-  to {
-    transform: rotateX(-180deg);
-  }
-}
-
 @keyframes backfaceFix {
   0% {
     opacity: 1;
@@ -16,7 +7,7 @@
   50% {
     opacity: 1;
   }
-  51% {
+  60% {
     opacity: 0;
   }
 }
@@ -105,9 +96,6 @@
       top: 0;
       transform-origin: bottom;
       transform-style: preserve-3d;
-      transform: rotateX(-180deg);
-      animation: flip 500ms linear;
-      box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
     }
   }
 
@@ -116,8 +104,6 @@
 
     &--front {
       align-items: flex-end;
-      animation: backfaceFix 500ms linear;
-      opacity: 0;
       background-color: #15803d;
     }
 
