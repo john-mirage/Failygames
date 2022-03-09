@@ -1,26 +1,40 @@
 import { gsap } from 'gsap';
+import { sum } from 'lodash';
 
 const daysCurrentTime = document.getElementsByClassName("days-current-time");
+const daysNextTime = document.getElementsByClassName("days-next-time");
+
 const hoursCurrentTime = document.getElementsByClassName("hours-current-time");
+const hoursNextTime = document.getElementsByClassName("hours-next-time");
+
 const minutesCurrentTime = document.getElementsByClassName("minutes-current-time");
+const minutesNextTime = document.getElementsByClassName("minutes-next-time");
 
 const secondsCurrentTime = document.getElementsByClassName("seconds-current-time");
 const secondsNextTime = document.getElementsByClassName("seconds-next-time");
 
 const EVENT_DATE_TIME = "2022-03-20T20:00:00";
+//const EVENT_DATE_TIME = "2022-03-10T00:33:00";
 
+let timeLeft = 0;
 let daysLeft = 0;
 let hoursLeft = 0;
 let minutesLeft = 0;
 let secondsLeft = 0;
 
+let daysAnimation = false;
+let hoursAnimation = false;
+let minutesAnimation = false;
+let secondsAnimation = false;
+
+let countDown = false;
+let timeIsOver = false;
 
 function getTimeLeft() {
   const eventDateTime = new Date(EVENT_DATE_TIME).getTime();
   const currentDateTime = Date.now();
   return Math.round((eventDateTime - currentDateTime) / 1000);
 }
-
 
 function setTimeUnits(timeLeft) {
   daysLeft = Math.floor(timeLeft / 86400);
@@ -31,87 +45,98 @@ function setTimeUnits(timeLeft) {
   secondsLeft = timeLeft % 60;
 }
 
-function displayDays() {
-  console.log(daysLeft + " days");
+function formatTime(timeValue) {
+  return timeValue > 9 ? timeValue : `0${timeValue}`;
+}
+
+function displayDays(initialCall) {
+  const nextDaysLeft = daysLeft - 1;
   for (let index = 0; index < 2; index++) {
-    daysCurrentTime[index].innerText = daysLeft;
+    daysCurrentTime[index].innerText = formatTime(daysLeft);
+    daysNextTime[index].innerText = formatTime(nextDaysLeft);
+  }
+  if (!initialCall) {
+    if (!daysAnimation) {
+      daysAnimation = gsap.to("#days-flip-pannel", { rotateX: -180, duration: 0.5 });
+    } else {
+      daysAnimation.restart();
+    }
+    daysLeft = nextDaysLeft;
   }
 }
 
-function displayHours() {
-  console.log(hoursLeft + " hours");
+function displayHours(initialCall) {
+  const nextHoursLeft = hoursLeft <= 0 ? 23 : hoursLeft - 1;
   for (let index = 0; index < 2; index++) {
-    hoursCurrentTime[index].innerText = hoursLeft;
+    hoursCurrentTime[index].innerText = formatTime(hoursLeft);
+    hoursNextTime[index].innerText = formatTime(nextHoursLeft);
+  }
+  if (!initialCall) {
+    if (!hoursAnimation) {
+      hoursAnimation = gsap.to("#hours-flip-pannel", { rotateX: -180, duration: 0.5 });
+    } else {
+      hoursAnimation.restart();
+    }
+    hoursLeft = nextHoursLeft;
   }
 }
 
-function displayMinutes() {
-  console.log(minutesLeft + " minutes");
+function displayMinutes(initialCall) {
+  const nextMinutesLeft = minutesLeft <= 0 ? 59 : minutesLeft - 1;
   for (let index = 0; index < 2; index++) {
-    minutesCurrentTime[index].innerText = minutesLeft;
+    minutesCurrentTime[index].innerText = formatTime(minutesLeft);
+    minutesNextTime[index].innerText = formatTime(nextMinutesLeft);
+  }
+  if (!initialCall) {
+    if (!minutesAnimation) {
+      minutesAnimation = gsap.to("#minutes-flip-pannel", { rotateX: -180, duration: 0.5 });
+    } else {
+      minutesAnimation.restart();
+    }
+    minutesLeft = nextMinutesLeft;
   }
 }
 
-function displaySeconds() {
-  console.log(secondsLeft + " seconds");
+function displaySeconds(initialCall) {
   const nextSecondsLeft = secondsLeft <= 0 ? 59 : secondsLeft - 1;
   for (let index = 0; index < 2; index++) {
-    secondsCurrentTime[index].innerText = secondsLeft;
-    secondsNextTime[index].innerText = nextSecondsLeft;
+    secondsCurrentTime[index].innerText = formatTime(secondsLeft);
+    secondsNextTime[index].innerText = formatTime(nextSecondsLeft);
   }
-  if (secondsLeft <= 0) {
-    minutesLeft -= 1;
-    secondsLeft = 59;
-    displayMinutes();
+  if (!initialCall) {
+    if (!secondsAnimation) {
+      secondsAnimation = gsap.to("#seconds-flip-pannel", { rotateX: -180, duration: 0.5 });
+    } else {
+      secondsAnimation.restart();
+    }
+    secondsLeft = nextSecondsLeft;
+  }
+}
+
+function displayTime(initialCall = false) {
+  const dayHasChanged = hoursLeft <= 0 && minutesLeft <= 0 && secondsLeft <= 0;
+  const hourHasChanged = minutesLeft <= 0 && secondsLeft <= 0;
+  const minuteHasChanged = secondsLeft <= 0;
+  if (timeLeft < 0 && !initialCall) {
+    console.log("Time is Over !!!");
+    clearInterval(countDown);
   } else {
-    secondsLeft -= 1;
+    if (dayHasChanged || initialCall) displayDays(initialCall);
+    if (hourHasChanged || initialCall) displayHours(initialCall);
+    if (minuteHasChanged || initialCall) displayMinutes(initialCall);
+    displaySeconds(initialCall);
+    timeLeft -= 1;
   }
 }
 
 export function mountTimer() {
-  const timeLeft = getTimeLeft();
-  setTimeUnits(timeLeft);
-
-  displayDays();
-  displayHours();
-  displayMinutes();
-  displaySeconds();
-
-  gsap.to("#seconds-flip-pannel", {
-    rotationX: -180,
-    duration: 1,
-    repeat: -1,
-    onRepeat: displaySeconds,
-  });
+  timeLeft = getTimeLeft();
+  if (timeLeft <= 0) timeIsOver = true;
+  if (!timeIsOver) {
+    setTimeUnits(timeLeft);
+    countDown = setInterval(displayTime, 1000);
+  } else {
+    console.log("Time is Over !!!");
+  }
+  displayTime(true);
 }
-
-/*
-function updateTime() {
-  currentTime = nextTime;
-  currentFormatedTime = nextFormatedTime;
-  nextTime = nextTime - 1;
-  nextFormatedTime = getFormatedTime(nextTime);
-}
-*/
-
-/*
-currentTime = timeLeft;
-currentFormatedTime = getFormatedTime(currentTime);
-nextTime = currentTime - 1;
-nextFormatedTime = getFormatedTime(nextTime);
-*/
-
-/*
-Object.keys(formatedTime).forEach((unit) => {
-  formatedTime[unit] = `0${formatedTime[unit].toString()}`.slice(-2);
-});
-*/
-
-/*
-gsap.to("#seconds-flip-pannel", {
-  rotationX: -180,
-  duration: 1,
-  repeat: -1,
-  onRepeat: displayTime,
-});
-*/
