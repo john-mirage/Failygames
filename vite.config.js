@@ -1,16 +1,16 @@
-import { defineConfig } from 'vite'
-import path from 'path'
+const { resolve } = require('path')
+const { defineConfig } = require('vite')
 
 // https://vitejs.dev/config/
 export default defineConfig({
     base: "/Failygames/",
     resolve: {
         alias: {
-            '@data': path.resolve(__dirname, 'src/data'),
-            '@pages': path.resolve(__dirname, 'src/pages'),
-            '@scripts': path.resolve(__dirname, 'src/scripts'),
-            '@styles': path.resolve(__dirname, 'src/styles'),
-            '@images': path.resolve(__dirname, 'src/images'),
+            '@data': resolve(__dirname, 'src/data'),
+            '@pages': resolve(__dirname, 'src/pages'),
+            '@scripts': resolve(__dirname, 'src/scripts'),
+            '@styles': resolve(__dirname, 'src/styles'),
+            '@images': resolve(__dirname, 'src/images'),
         },
     },
 })
