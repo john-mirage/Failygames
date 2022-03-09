@@ -8,7 +8,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600&display=swap" rel="stylesheet" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Failygames</title>
-  <script type="module" crossorigin src="/Failygames/assets/index.fba606ec.js"></script>
+  <script type="module" crossorigin src="/Failygames/assets/index.4489f4ad.js"></script>
   <link rel="modulepreload" href="/Failygames/assets/vendor.cf13a3c0.js">
   <link rel="stylesheet" href="/Failygames/assets/index.c05eaeed.css">
 </head>
@@ -59,53 +59,97 @@
         <div class="timer">
 
             <!-- DAYS -->
-            <div class="timer__display" id="days-display">
+            <div class="timer__display">
                 <!-- TOP PANNEL -->
                 <div class="timer__pannel timer__pannel--top">
-                    <span class="timer__number timer__number--bottom" id="days-next"></span>
+                    <span class="timer__number timer__number--bottom days-next-time"></span>
+                </div>
+                <!-- FLIP PANNEL -->
+                <div class="timer__pannel timer__pannel--flip" id="days-flip-pannel">
+                    <!-- FRONT FACE -->
+                    <div class="timer__face timer__face--front">
+                        <span class="timer__number timer__number--bottom days-current-time"></span>
+                    </div>
+                    <!-- BACK FACE -->
+                    <div class="timer__face timer__face--back">
+                        <span class="timer__number timer__number--top days-next-time"></span>
+                    </div>
                 </div>
                 <!-- BOTTOM PANNEL -->
                 <div class="timer__pannel timer__pannel--bottom">
-                    <span class="timer__number timer__number--top" id="days-current"></span>
+                    <span class="timer__number timer__number--top days-current-time"></span>
                 </div>
                 <p class="timer__unit">jours</p>
             </div>
 
             <!-- HOURS -->
-            <div class="timer__display" id="hours-display">
+            <div class="timer__display">
                 <!-- TOP PANNEL -->
                 <div class="timer__pannel timer__pannel--top">
-                    <span class="timer__number timer__number--bottom" id="hours-next"></span>
+                    <span class="timer__number timer__number--bottom hours-next-time"></span>
+                </div>
+                <!-- FLIP PANNEL -->
+                <div class="timer__pannel timer__pannel--flip" id="hours-flip-pannel">
+                    <!-- FRONT FACE -->
+                    <div class="timer__face timer__face--front">
+                        <span class="timer__number timer__number--bottom hours-current-time"></span>
+                    </div>
+                    <!-- BACK FACE -->
+                    <div class="timer__face timer__face--back">
+                        <span class="timer__number timer__number--top hours-next-time"></span>
+                    </div>
                 </div>
                 <!-- BOTTOM PANNEL -->
                 <div class="timer__pannel timer__pannel--bottom">
-                    <span class="timer__number timer__number--top" id="hours-current"></span>
+                    <span class="timer__number timer__number--top hours-current-time"></span>
                 </div>
                 <p class="timer__unit">Heures</p>
             </div>
 
             <!-- MINUTES -->
-            <div class="timer__display" id="minutes-display">
+            <div class="timer__display">
                 <!-- TOP PANNEL -->
                 <div class="timer__pannel timer__pannel--top">
-                    <span class="timer__number timer__number--bottom" id="minutes-next"></span>
+                    <span class="timer__number timer__number--bottom minutes-next-time"></span>
+                </div>
+                <!-- FLIP PANNEL -->
+                <div class="timer__pannel timer__pannel--flip" id="minutes-flip-pannel">
+                    <!-- FRONT FACE -->
+                    <div class="timer__face timer__face--front">
+                        <span class="timer__number timer__number--bottom minutes-current-time"></span>
+                    </div>
+                    <!-- BACK FACE -->
+                    <div class="timer__face timer__face--back">
+                        <span class="timer__number timer__number--top minutes-next-time"></span>
+                    </div>
                 </div>
                 <!-- BOTTOM PANNEL -->
                 <div class="timer__pannel timer__pannel--bottom">
-                    <span class="timer__number timer__number--top" id="minutes-current"></span>
+                    <span class="timer__number timer__number--top minutes-current-time"></span>
                 </div>
                 <p class="timer__unit">Minutes</p>
             </div>
 
             <!-- SECONDS -->
-            <div class="timer__display" id="seconds-display">
+            <div class="timer__display">
                 <!-- TOP PANNEL -->
                 <div class="timer__pannel timer__pannel--top">
-                    <span class="timer__number timer__number--bottom" id="seconds-next"></span>
+                    <span class="timer__number timer__number--bottom seconds-next-time"></span>
+                </div>
+                <!-- FLIP PANNEL -->
+                <div class="timer__pannel timer__pannel--flip" id="seconds-flip-pannel">
+                    <!-- FRONT FACE -->
+                    <div class="timer__face timer__face--front">
+                        <span class="timer__number timer__number--bottom seconds-current-time"></span>
+                    </div>
+                    <!-- BACK FACE -->
+                    <div class="timer__face timer__face--back">
+                        <span class="timer__number timer__number--top seconds-next-time"></span>
+                    </div>
                 </div>
                 <!-- BOTTOM PANNEL -->
                 <div class="timer__pannel timer__pannel--bottom">
-                    <span class="timer__number timer__number--top" id="seconds-current"></span>
+                    <span class="timer__number timer__number--top seconds-current-time"></span>
                 </div>
                 <p class="timer__unit">Secondes</p>
             </div>
