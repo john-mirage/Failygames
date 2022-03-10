@@ -8,7 +8,7 @@
   margin-bottom: 10rem;
   margin-top: -10vw;
   
-  @media screen and (min-width: 576px) {
+  @media screen and (min-width: variables.$screen-sm) {
     margin-top: -8rem;
   }
   
@@ -23,16 +23,12 @@
     margin-bottom: 3.2rem;
     overflow: hidden;
     
-    @media screen and (min-width: 768px) {
+    @media screen and (min-width: variables.$screen-md) {
       min-height: 24rem;
       flex-direction: row;
     }
     
-    @media screen and (min-width: 1024px) {
-      min-height: 28rem;
-    }
-    
-    @media screen and (min-width: 1024px) {
+    @media screen and (min-width: variables.$screen-lg) {
       min-height: 32rem;
     }
     
@@ -48,7 +44,7 @@
     height: auto;
     padding-top: 56.25%;
     
-    @media screen and (min-width: 768px) {
+    @media screen and (min-width: variables.$screen-md) {
       flex: 1 1 50%;
       padding-top: 0;
       
@@ -57,7 +53,7 @@
       }
     }
     
-    @media screen and (min-width: 1024px) {
+    @media screen and (min-width: variables.$screen-lg) {
       flex: 1 1 45%;
     }
   }
@@ -68,7 +64,7 @@
     order: 2;
     padding: 2.4rem;
     
-    @media screen and (min-width: 768px) {
+    @media screen and (min-width: variables.$screen-md) {
       flex: 1 1 50%;
       
       &--first-order {
@@ -76,7 +72,7 @@
       }
     }
     
-    @media screen and (min-width: 1024px) {
+    @media screen and (min-width: variables.$screen-lg) {
       flex: 1 1 55%;
       padding: 3.6rem;
     }
@@ -104,7 +100,7 @@
     color: variables.$color-primary-text;
     transition: color 150ms;
     
-    @media screen and (min-width: 1024px) {
+    @media screen and (min-width: variables.$screen-lg) {
       font-size: 3rem;
       line-height: 4rem;
     }
@@ -120,7 +116,7 @@
     line-height: 2rem;
     color: variables.$color-secondary-text;
     
-    @media screen and (min-width: 1024px) {
+    @media screen and (min-width: variables.$screen-lg) {
       font-size: 1.6rem;
       line-height: 2.4rem;
     }

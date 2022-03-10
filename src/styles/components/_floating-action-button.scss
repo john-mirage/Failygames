@@ -16,7 +16,7 @@
   cursor: pointer;
   transition: transform 300ms, background-color 150ms;
   
-  @media screen and (min-width: 576px) {
+  @media screen and (min-width: variables.$screen-sm) {
     width: 6.4rem;
     height: 6.4rem;
   }

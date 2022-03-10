@@ -5,12 +5,12 @@
   margin-bottom: -0.5rem;
   overflow-x: auto;
 
-  @media screen and (min-width: 576px) {
+  @media screen and (min-width: variables.$screen-sm) {
     margin-left: -1.5rem;
     margin-right: -1.5rem;
   }
 
-  @media screen and (min-width: 1024px) {
+  @media screen and (min-width: variables.$screen-lg) {
     margin-left: -2rem;
     margin-right: -2rem;
   }
@@ -22,12 +22,12 @@
     display: inline-block;
     min-width: 100%;
 
-    @media screen and (min-width: 576px) {
+    @media screen and (min-width: variables.$screen-sm) {
       padding-left: 1.5rem;
       padding-right: 1.5rem;
     }
   
-    @media screen and (min-width: 1024px) {
+    @media screen and (min-width: variables.$screen-lg) {
       padding-left: 2rem;
       padding-right: 2rem;
     }

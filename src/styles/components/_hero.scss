@@ -11,15 +11,15 @@
   padding-left: 1.6rem;
   padding-right: 1.6rem;
   
-  @media screen and (min-width: 576px) {
+  @media screen and (min-width: variables.$screen-sm) {
     height: 80rem;
   }
   
-  @media screen and (min-width: 1024px) {
+  @media screen and (min-width: variables.$screen-lg) {
     height: 90rem;
   }
   
-  @media screen and (min-width: 1200px) {
+  @media screen and (min-width: variables.$screen-xl) {
     padding-top: 16rem;
     padding-bottom: 26rem;
   }
@@ -33,7 +33,7 @@
     border-radius: 9999px;
     margin-bottom: 4.8rem;
     
-    @media screen and (min-width: 576px) {
+    @media screen and (min-width: variables.$screen-sm) {
       width: 26rem;
     }
   }

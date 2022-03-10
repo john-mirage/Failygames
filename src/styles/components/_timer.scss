@@ -34,7 +34,7 @@
   font-weight: 400;
   color: variables.$color-surface;
   
-  @media screen and (min-width: 576px) {
+  @media screen and (min-width: variables.$screen-sm) {
     font-size: 4.8rem;
     line-height: 4.8rem;
   }
@@ -48,7 +48,7 @@
   gap: 4%;
   width: 100%;
   
-  @media screen and (min-width: 576px) {
+  @media screen and (min-width: variables.$screen-sm) {
     width: 50rem;
   }
   
@@ -126,7 +126,7 @@
     color: variables.$color-secondary-text;
     text-transform: uppercase;
     
-    @media screen and (min-width: 576px) {
+    @media screen and (min-width: variables.$screen-sm) {
       font-size: 1.4rem;
       padding-top: 1rem;
     }

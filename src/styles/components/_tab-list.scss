@@ -20,7 +20,7 @@
     height: auto;
     border-bottom: 0.1rem solid rgba(0, 0, 0, 0.1);
     
-    @media screen and (min-width: 768px) {
+    @media screen and (min-width: variables.$screen-md) {
       flex-direction: row;
     }
   }
@@ -47,7 +47,7 @@
       border-bottom: none;
     }
     
-    @media screen and (min-width: 768px) {
+    @media screen and (min-width: variables.$screen-md) {
       flex: 1 1 0%;
       border: none;
     }

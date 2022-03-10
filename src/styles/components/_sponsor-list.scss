@@ -5,12 +5,11 @@
   grid-template-columns: repeat(1, 1fr);
   gap: 2rem;
   
-  // FIX POVERS
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: variables.$screen-md) {
      grid-template-columns: repeat(2, 1fr);
   }
   
-  @media screen and (min-width: 1024px) {
+  @media screen and (min-width: variables.$screen-lg) {
     grid-template-columns: repeat(3, 1fr);
   }
   
@@ -26,7 +25,7 @@
     border-radius: 0.8rem;
     box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
     
-    @media screen and (min-width: 576px) {
+    @media screen and (min-width: variables.$screen-sm) {
       flex-direction: row;
       justify-content: flex-start;
     }
@@ -41,7 +40,7 @@
     border-radius: 9999px;
     margin-bottom: 1rem;
     
-    @media screen and (min-width: 576px) {
+    @media screen and (min-width: variables.$screen-sm) {
       margin-bottom: 0;
     }
   }
@@ -49,7 +48,7 @@
   &__info {
     text-align: center;
     
-    @media screen and (min-width: 576px) {
+    @media screen and (min-width: variables.$screen-sm) {
       text-align: left;
       padding-left: 2rem;
     }
