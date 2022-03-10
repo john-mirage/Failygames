@@ -112,6 +112,7 @@ function displaySeconds(initialCall) {
       secondsFrontAnimation = gsap.to("#seconds-front-face", frontAnimationOptions);
     } else {
       secondsFlipAnimation.restart();
+      secondsFrontAnimation.restart();
     }
     secondsLeft = nextSecondsLeft;
   }
