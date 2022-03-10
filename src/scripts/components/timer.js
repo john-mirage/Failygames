@@ -28,7 +28,14 @@ let minutesAnimation = false;
 let secondsFlipAnimation = false;
 let secondsFrontAnimation = false;
 const flipAnimationOptions = { rotateX: -180, duration: 0.5 };
-const frontAnimationOptions= { keyframes: { opacity: [1, 1, 0] }, duration: 0.5 };
+const frontAnimationOptions= {
+  keyframes: {
+    "0%": { opacity: 1 },
+    "50%": { opacity: 1 },
+    "100%": { opacity: 0 },
+  },
+  duration: 0.5
+};
 
 let countDown = false;
 let timeIsOver = false;
