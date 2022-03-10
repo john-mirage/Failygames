@@ -26,16 +26,7 @@ let daysAnimation = false;
 let hoursAnimation = false;
 let minutesAnimation = false;
 let secondsFlipAnimation = false;
-let secondsFrontAnimation = false;
 const flipAnimationOptions = { rotateX: -180, duration: 0.5 };
-const frontAnimationOptions= {
-  keyframes: {
-    "0%": { opacity: 1 },
-    "50%": { opacity: 1 },
-    "100%": { opacity: 0 },
-  },
-  duration: 0.5
-};
 
 let countDown = false;
 let timeIsOver = false;
@@ -116,10 +107,8 @@ function displaySeconds(initialCall) {
   if (!initialCall) {
     if (!secondsFlipAnimation) {
       secondsFlipAnimation = gsap.to("#seconds-flip-pannel", flipAnimationOptions);
-      secondsFrontAnimation = gsap.to("#seconds-front-face", frontAnimationOptions);
     } else {
       secondsFlipAnimation.restart();
-      secondsFrontAnimation.restart();
     }
     secondsLeft = nextSecondsLeft;
   }
