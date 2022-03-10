@@ -25,7 +25,10 @@ let secondsLeft = 0;
 let daysAnimation = false;
 let hoursAnimation = false;
 let minutesAnimation = false;
-let secondsAnimation = false;
+let secondsFlipAnimation = false;
+let secondsFrontAnimation = false;
+const flipAnimationOptions = { rotateX: -180, duration: 0.5 };
+const frontAnimationOptions= { keyframes: { opacity: [1, 1, 0] }, duration: 0.5 };
 
 let countDown = false;
 let timeIsOver = false;
@@ -57,7 +60,7 @@ function displayDays(initialCall) {
   }
   if (!initialCall) {
     if (!daysAnimation) {
-      daysAnimation = gsap.to("#days-flip-pannel", { rotateX: -180, duration: 0.5 });
+      daysAnimation = gsap.to("#days-flip-pannel", flipAnimationOptions);
     } else {
       daysAnimation.restart();
     }
@@ -73,7 +76,7 @@ function displayHours(initialCall) {
   }
   if (!initialCall) {
     if (!hoursAnimation) {
-      hoursAnimation = gsap.to("#hours-flip-pannel", { rotateX: -180, duration: 0.5 });
+      hoursAnimation = gsap.to("#hours-flip-pannel", flipAnimationOptions);
     } else {
       hoursAnimation.restart();
     }
@@ -89,7 +92,7 @@ function displayMinutes(initialCall) {
   }
   if (!initialCall) {
     if (!minutesAnimation) {
-      minutesAnimation = gsap.to("#minutes-flip-pannel", { rotateX: -180, duration: 0.5 });
+      minutesAnimation = gsap.to("#minutes-flip-pannel", flipAnimationOptions);
     } else {
       minutesAnimation.restart();
     }
@@ -104,10 +107,12 @@ function displaySeconds(initialCall) {
     secondsNextTime[index].innerText = formatTime(nextSecondsLeft);
   }
   if (!initialCall) {
-    if (!secondsAnimation) {
-      secondsAnimation = gsap.to("#seconds-flip-pannel", { rotateX: -180, duration: 0.5 });
+    if (!secondsFlipAnimation) {
+      secondsFlipAnimation = gsap.to("#seconds-flip-pannel", flipAnimationOptions);
+      secondsFrontAnimation = gsap.to("#seconds-front-face", frontAnimationOptions);
     } else {
-      secondsAnimation.restart();
+      secondsFlipAnimation.restart();
+      secondsFrontAnimation.restart();
     }
     secondsLeft = nextSecondsLeft;
   }

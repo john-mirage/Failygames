@@ -1,17 +1,5 @@
 @use '../variables';
 
-@keyframes backfaceFix {
-  0% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 1;
-  }
-  60% {
-    opacity: 0;
-  }
-}
-
 @mixin pannel {
   position: absolute;
   left: 0;
