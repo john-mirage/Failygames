@@ -27,7 +27,7 @@
      for (let index = 0; index < topAppBarLabels.length; index++) {
        topAppBarLabels[index].classList.add("top-app-bar__label--on-dark");
      }
-     hamburgerButton.classList.add("hamburger-button--on-dark");
+     hamburgerButton.classList.add("icon-button--on-dark");
      topAppBarIsFaded = true;
    }
  }
@@ -41,7 +41,7 @@
      for (let index = 0; index < topAppBarLabels.length; index++) {
        topAppBarLabels[index].classList.remove("top-app-bar__label--on-dark");
      }
-     hamburgerButton.classList.remove("hamburger-button--on-dark");
+     hamburgerButton.classList.remove("icon-button--on-dark");
      topAppBarIsFaded = false;
    }
  }
