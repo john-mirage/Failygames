@@ -18,6 +18,11 @@
         - page-name
             - main.scss
             - main.js
+    - styles
+        - _globals.scss
+        - _mixins.scss
+        - _normalize.scss
+        - _variables.scss
 - index.html
 ```
 
@@ -49,6 +54,9 @@ Make sure that the relative path is correct.
 ##### src/pages/page-name/main.scss
 
 ```scss
+@use '../../styles/normalize';
+@use '../../styles/globals';
+
 @use '../../components/leaderboard/leaderboard';
 ```
 
