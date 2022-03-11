@@ -32,7 +32,7 @@
   font-size: 8vw;
   line-height: 8vw;
   font-weight: 400;
-  color: variables.$color-surface;
+  color: var(--color-primary-text);
   
   @media screen and (min-width: variables.$screen-sm) {
     font-size: 4.8rem;
@@ -58,7 +58,7 @@
     height: auto;
     padding-top: 100%;
     border-radius: 0.4rem;
-    background-color: variables.$color-primary;
+    background-color: var(--color-primary);
     perspective: 800px;
   }
   
@@ -69,14 +69,14 @@
       @include fixedPannel;
       top: 0;
       align-items: flex-end;
-      background-color: #15803d;
+      background-color: var(--color-primary-alt);
     }
 
     &--bottom {
       @include fixedPannel;
       bottom: 0;
       align-items: flex-start;
-      background-color: variables.$color-primary;
+      background-color: var(--color-primary);
     }
 
     &--flip {
@@ -93,13 +93,13 @@
 
     &--front {
       align-items: flex-end;
-      background-color: #15803d;
+      background-color: var(--color-primary-alt);
     }
 
     &--back {
       align-items: flex-start;
       transform: rotateY(180deg) rotate(180deg);
-      background-color: variables.$color-primary;
+      background-color: var(--color-primary);
     }
   }
 
@@ -123,8 +123,9 @@
     padding-top: 10%;
     font-size: 3vw;
     font-weight: 500;
-    color: variables.$color-secondary-text;
+    color: var(--color-secondary-text);
     text-transform: uppercase;
+    letter-spacing: 0.1rem;
     
     @media screen and (min-width: variables.$screen-sm) {
       font-size: 1.4rem;

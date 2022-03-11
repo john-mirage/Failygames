@@ -34,10 +34,9 @@
   }
 
   &__content {
-    border-radius: 0.8rem;
-    box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+    border-top-left-radius: 0.8rem;
+    border-top-right-radius: 0.8rem;
     overflow: hidden;
-    border-bottom: 0.1rem solid rgba(0, 0, 0, 0.1);
   }
 
   &__table {
@@ -45,8 +44,8 @@
   }
 
   &__head {
-    background-color: #f8fafc;
-    border-bottom: 0.1rem solid rgba(0, 0, 0, 0.1);
+    background-color: var(--color-divider);
+    border-bottom: 0.1rem solid var(--color-divider);
   }
 
   &__header {
@@ -56,15 +55,15 @@
     font-weight: 500;
     text-transform: uppercase;
     letter-spacing: 0.03rem;
-    color: variables.$color-secondary-text;
+    color: var(--color-primary-text);
   }
 
   &__body {
-    background-color: variables.$color-surface;
+    background-color: var(--color-surface);
   }
 
   &__row {
-    border-bottom: 0.1rem solid rgba(0, 0, 0, 0.1);
+    border-bottom: 0.1rem solid var(--color-divider);
 
     &:last-child {
       border: none;
@@ -76,7 +75,7 @@
     text-align: left;
     font-size: 1.4rem;
     font-weight: 400;
-    color: variables.$color-primary-text;
+    color: var(--color-primary-text);
     white-space: nowrap;
 
     &--with-medal {

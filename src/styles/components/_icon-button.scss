@@ -22,11 +22,11 @@
     width: 2.4rem;
     height: 2.4rem;
     margin: auto;
-    fill: variables.$color-secondary-text;
+    fill: var(--color-secondary-text);
     transition: fill 150ms;
 
     .icon-button--on-dark & {
-      fill: variables.$color-surface;
+      fill: var(--color-surface);
     }
   }
 }

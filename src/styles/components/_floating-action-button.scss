@@ -10,7 +10,7 @@
   width: 5.6rem;
   height: 5.6rem;
   border: none;
-  background-color: variables.$color-primary;
+  background-color: var(--color-primary);
   box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
   border-radius: 9999px;
   cursor: pointer;
@@ -22,7 +22,7 @@
   }
   
   &:hover {
-    background-color: variables.$color-secondary;
+    background-color: var(--color-secondary);
   }
   
   &--visible {
@@ -32,6 +32,6 @@
   &__icon {
     display: block;
     margin: auto;
-    fill: variables.$color-surface;
+    fill: var(--color-primary-text);
   }
 }

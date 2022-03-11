@@ -11,7 +11,7 @@
     width: 100%;
     height: 5.6rem;
     border: none;
-    background-color: #f8fafc;
+    background-color: var(--color-divider);
     padding-left: 5.6rem;
     padding-right: 1.8rem;
     font-family: inherit;
@@ -19,15 +19,15 @@
     font-weight: 500;
     box-shadow: inset 0 2px 4px 0 rgb(0 0 0 / 0.05);
     border-radius: 0.8rem;
-    color: variables.$color-primary-text;
+    color: var(--color-primary-text);
     
     &:focus {
-      outline: 0.2rem solid variables.$color-primary;
+      outline: 0.2rem solid var(--color-primary);
     }
     
     &::placeholder {
       font-weight: 400;
-      color: variables.$color-secondary-text;
+      color: var(--color-secondary-text);
     }
   }
   
@@ -37,7 +37,7 @@
     left: 1.6rem;
     width: 2.4rem;
     height: 2.4rem;
-    fill: variables.$color-secondary-text;
+    fill: var(--color-secondary-text);
     transform: translateY(-50%);
   }
 }

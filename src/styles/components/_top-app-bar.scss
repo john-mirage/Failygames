@@ -8,7 +8,7 @@
   left: 0;
   width: 100%;
   height: 6.4rem;
-  background-color: variables.$color-surface;
+  background-color: var(--color-surface);
   box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
   overflow: hidden;
   transition: background-color 300ms;
@@ -81,11 +81,11 @@
     font-weight: 500;
     letter-spacing: 0.06rem;
     text-transform: uppercase;
-    color: variables.$color-primary-text;
+    color: var(--color-primary-text);
     transition: color 150ms;
 
     &--on-dark {
-      color: variables.$color-surface;
+      color: var(--color-surface);
     }
   }
   
@@ -95,7 +95,7 @@
     left: 0;
     width: 100%;
     height: 0.4rem;
-    background: linear-gradient(to right, variables.$color-primary, variables.$color-secondary);
+    background-color: var(--color-primary);
     transform: translateY(100%);
     transition: transform 150ms;
     

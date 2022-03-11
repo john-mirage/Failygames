@@ -51,3 +51,8 @@ mountLeaderboard(thirdQualificationJson, "leaderboard-q3", "search-bar-q3");
 window.addEventListener("load", () => {
   document.body.classList.remove("preload");
 })
+
+const themeToggler = document.getElementById("theme-toggler");
+themeToggler.addEventListener("click", () => {
+  document.documentElement.classList.toggle("dark");
+});

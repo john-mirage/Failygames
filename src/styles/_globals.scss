@@ -1,7 +1,29 @@
 @use 'variables';
 
+:root {
+  --color-primary-text: #1e293b;
+  --color-secondary-text: #6b7280;
+  --color-primary: #6ee7b7;
+  --color-primary-alt: #34d399;
+  --color-secondary: #a7f3d0;
+  --color-background: #f1f5f9;
+  --color-surface: #fff;
+  --color-divider: #f1f5f9;
+}
+
+:root.dark {
+  --color-primary-text: #f8fafc;
+  --color-secondary-text: #94a3b8;
+  --color-primary: #10b981;
+  --color-primary-alt: #059669;
+  --color-secondary: #34d399;
+  --color-background: #0f172a;
+  --color-surface: #1e293b;
+  --color-divider: #334155;
+}
+
 body {
-  background-color: variables.$color-background;
+  background-color: var(--color-background);
 }
 
 .preload * {
@@ -9,4 +31,5 @@ body {
   -moz-transition: none !important;
   -ms-transition: none !important;
   -o-transition: none !important;
+  transition: none !important;
 }
