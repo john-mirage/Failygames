@@ -25,7 +25,7 @@ let previousScrollY = 0;
  * This variable is used to check if the current vertical scroll is
  * higher or lower than the previous value.
  */
-let currentScrollY = 0;
+export let currentScrollY = 0;
 
 /**
  * Handle the scrolling of the page.
