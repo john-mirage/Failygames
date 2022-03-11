@@ -51,49 +51,40 @@
    }
  }
  
- /**
-  * Decide if the Floating action button in the bottom right of the screen
-  * should be visible.
-  *
-  * To change the breakpoint, modify VERTICAL_BREAKPOINT constant at the top of the file.
-  *
-  * @example
-  * If the user viewport is scrolled below VERTICAL_BREAKPOINT pixels,
-  * FAB become visible if the user scroll up.
-  * FAB become invisible if the user scroll down.
-  *
-  * If the user viewport is scrolled above VERTICAL_BREAKPOINT pixels,
-  * FAB become invisible.
-  *
-  * @param {number} currentScrollY - The current vertical scroll value.
-  * @param {number} previousScrollY - The previous vertical scroll value.
-  */
- export function showFloatingActionButtonOnScroll(
-   currentScrollY,
-   previousScrollY
- ) {
-   if (currentScrollY >= VERTICAL_BREAKPOINT) {
-     if (currentScrollY < previousScrollY) {
-       showFloatingActionButton();
-     } else if (currentScrollY > previousScrollY) {
-       hideFloatingActionButton();
-     }
-   } else if (currentScrollY <= VERTICAL_BREAKPOINT) {
-     hideFloatingActionButton();
-   }
- }
+/**
+ * Decide if the Floating action button in the bottom right of the screen
+ * should be visible.
+ *
+ * To change the breakpoint, modify VERTICAL_BREAKPOINT constant at the top of the file.
+ *
+ * @example
+ * If the user viewport is scrolled below VERTICAL_BREAKPOINT pixels,
+ * FAB become visible if the user scroll up.
+ * FAB become invisible if the user scroll down.
+ *
+ * If the user viewport is scrolled above VERTICAL_BREAKPOINT pixels,
+ * FAB become invisible.
+ */
+export function showFloatingActionButtonOnScroll() {
+  const previousScrollYPixels = document.documentElement.style.getPropertyValue('--previous-scroll-y');
+  const currentScrollYPixels = document.documentElement.style.getPropertyValue('--scroll-y');
+  const previousScrollY = Number(previousScrollYPixels.slice(0, -2));
+  const currentScrollY = Number(currentScrollYPixels.slice(0, -2));
+  if (currentScrollY >= VERTICAL_BREAKPOINT) {
+    if (currentScrollY < previousScrollY) {
+      showFloatingActionButton();
+    } else if (currentScrollY > previousScrollY) {
+      hideFloatingActionButton();
+    }
+  } else if (currentScrollY <= VERTICAL_BREAKPOINT) {
+    hideFloatingActionButton();
+  }
+}
  
  /**
   * Mount the Floating Action Button.
   */
  export function mountFloatingActionButton() {
    floatingActionButton.addEventListener("click", scrollTop);
- }
- 
- /**
-  * Unmount the Floating Action Button.
-  */
- export function UnmountFloatingActionButton() {
-   floatingActionButton.removeEventListener("click", scrollTop);
  }
  

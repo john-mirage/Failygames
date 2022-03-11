@@ -46,16 +46,16 @@
    }
  }
  
- /**
-  * Fade the top app bar when user scroll down.
-  *
-  * @param {number} currentScrollY - The current vertical scroll value.
-  */
- export function fadeTopAppBarOnScroll(currentScrollY) {
-   if (currentScrollY > 0) {
-     fadeTopAppBar();
-   } else if (currentScrollY <= 0) {
-     showTopAppBar();
-   }
- }
+/**
+ * Fade the top app bar when user scroll down.
+ */
+export function fadeTopAppBarOnScroll() {
+  const currentScrollYPixels = document.documentElement.style.getPropertyValue('--scroll-y');
+  const currentScrollY = Number(currentScrollYPixels.slice(0, -2));
+  if (currentScrollY > 0) {
+    fadeTopAppBar();
+  } else if (currentScrollY <= 0) {
+    showTopAppBar();
+  }
+}
  

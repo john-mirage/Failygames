@@ -1,5 +1,3 @@
-import { currentScrollY } from "@scripts/main";
-
 /**
  * Get the drawer html element.
  */
@@ -36,10 +34,11 @@ let drawerIsOpen = false;
 function openDrawer(event) {
   event.preventDefault();
   if (!drawerIsOpen) {
+    const currentScrollY = document.documentElement.style.getPropertyValue('--scroll-y');
     drawer.classList.add("drawer--open");
     scrim.classList.add("scrim--visible");
     document.body.style.position = 'fixed';
-    document.body.style.top = `-${currentScrollY}px`;
+    document.body.style.top = `-${currentScrollY}`;
     document.body.style.left = '0';
     document.body.style.width = '100%';
     drawerIsOpen = true;
