@@ -53,6 +53,8 @@ window.addEventListener("load", () => {
 })
 
 const themeToggler = document.getElementById("theme-toggler");
+const themeTogglerDot = document.getElementById("theme-toggler-dot");
 themeToggler.addEventListener("click", () => {
   document.documentElement.classList.toggle("dark");
+  themeTogglerDot.classList.toggle("toggle-button__dot--active");
 });
