@@ -49,7 +49,7 @@ Make sure that the relative path is correct.
 ##### src/pages/page-name/main.scss
 
 ```scss
-@use 'components/leaderboard/leaderboard';
+@use '../../components/leaderboard/leaderboard';
 ```
 
 ## JS
