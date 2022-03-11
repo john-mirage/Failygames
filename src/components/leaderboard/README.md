@@ -15,9 +15,10 @@
             - _leaderboard.scss
             - leaderboard.js
     - pages
-        - index
+        - page-name
             - main.scss
             - main.js
+- index.html
 ```
 
 ## HTML
@@ -45,7 +46,7 @@ Make sure to replace:
 
 Make sure that the relative path is correct.
 
-##### main.scss
+##### src/pages/page-name/main.scss
 
 ```scss
 @use 'components/leaderboard/leaderboard';
@@ -53,13 +54,15 @@ Make sure that the relative path is correct.
 
 ## JS
 
+Absolute paths are handled by Vitejs resolve aliases in the config file `vite.config.js` and the absolute paths in `jsconfig.json`.
+
 Make sure to replace:
 - json file path
 - leaderboard options
 
 Table data properties length must equal columns length (team, points === team, points).
 
-##### data.json
+##### src/data/data.json
 
 ```json
 [
@@ -78,7 +81,7 @@ Table data properties length must equal columns length (team, points === team, p
 ]
 ```
 
-##### main.js
+##### src/pages/page-name/main.js
 
 ```js
 import Leaderboard from "@components/leaderboard/leaderboard";
