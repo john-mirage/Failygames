@@ -79,6 +79,10 @@
     color: var(--color-secondary-text);
     transition: color 150ms;
 
+    &--active {
+      color: var(--color-primary-text);
+    }
+
     .top-app-bar__link:hover & {
       color: var(--color-primary-text);
     }
@@ -91,11 +95,5 @@
     width: 100%;
     height: 0.4rem;
     background-color: var(--color-primary);
-    transform: translateY(100%);
-    transition: transform 150ms;
-    
-    .top-app-bar__link:hover & {
-      transform: translateY(0);
-    }
   }
 }
