@@ -1,55 +1,59 @@
-/**
- * Get the floating action button html element.
- *
- * @constant {HTMLElement} floatingActionButton - The floating action button.
- */
- const floatingActionButton = document.getElementById("floating-action-button");
+import gsap from "gsap";
+import { ScrollToPlugin } from "gsap/ScrollToPlugin"
 
- /**
-  * Set the vertical breakpoint that trigger the floating action button visibility.
-  *
-  * @constant {number} VERTICAL_BREAKPOINT - The vertical breakpoint.
-  */
- const VERTICAL_BREAKPOINT = 200;
+/**
+* Get the floating action button html element.
+*
+* @constant {HTMLElement} floatingActionButton - The floating action button.
+*/
+const floatingActionButton = document.getElementById("floating-action-button");
+
+/**
+ * Set the vertical breakpoint that trigger the floating action button visibility.
+ *
+ * @constant {number} VERTICAL_BREAKPOINT - The vertical breakpoint.
+ */
+const VERTICAL_BREAKPOINT = 200;
  
- /**
-  * Floating Action Button initial visibility state.
-  */
- let floatingActionButtonIsVisible = false;
+/**
+ * Floating Action Button initial visibility state.
+ */
+let floatingActionButtonIsVisible = false;
  
- /**
-  * Scroll the viewport of the user to the very top left.
-  *
-  * @param {Event} event - The event.
-  */
- function scrollTop(event) {
+/**
+ * Scroll the viewport of the user to the very top left.
+ *
+ * @param {Event} event - The event.
+ */
+function scrollTop(event) {
    event.preventDefault();
-   window.scrollTo(0, 0);
- }
+   gsap.registerPlugin(ScrollToPlugin);
+   gsap.to(window, {duration: 0.5, scrollTo: 0});
+}
  
- /**
-  * Show the floating action button on the page.
-  *
-  * If the floating action button is visible, this function does nothing.
-  */
- function showFloatingActionButton() {
-   if (!floatingActionButtonIsVisible) {
-     floatingActionButton.classList.add("floating-action-button--visible");
-     floatingActionButtonIsVisible = true;
-   }
- }
+/**
+ * Show the floating action button on the page.
+ *
+ * If the floating action button is visible, this function does nothing.
+ */
+function showFloatingActionButton() {
+  if (!floatingActionButtonIsVisible) {
+    floatingActionButton.classList.add("floating-action-button--visible");
+    floatingActionButtonIsVisible = true;
+  }
+}
  
- /**
-  * Hide the floating action button from the page.
-  *
-  * If the floating action button is not visible, this function does nothing.
-  */
- function hideFloatingActionButton() {
-   if (floatingActionButtonIsVisible) {
-     floatingActionButton.classList.remove("floating-action-button--visible");
-     floatingActionButtonIsVisible = false;
-   }
- }
+/**
+ * Hide the floating action button from the page.
+ *
+ * If the floating action button is not visible, this function does nothing.
+ */
+function hideFloatingActionButton() {
+  if (floatingActionButtonIsVisible) {
+    floatingActionButton.classList.remove("floating-action-button--visible");
+    floatingActionButtonIsVisible = false;
+  }
+}
  
 /**
  * Decide if the Floating action button in the bottom right of the screen
