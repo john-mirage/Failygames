@@ -9,16 +9,11 @@
   width: 100%;
   height: 6.4rem;
   background-color: var(--color-surface);
-  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
   overflow: hidden;
-  transition: background-color 300ms;
+  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
   
   @media screen and (min-width: variables.$screen-lg) {
     height: 8rem;
-  }
-
-  &--dark {
-    background-color: rgba(0, 0, 0, 0.9);
   }
   
   &__container {
@@ -81,11 +76,11 @@
     font-weight: 500;
     letter-spacing: 0.06rem;
     text-transform: uppercase;
-    color: var(--color-primary-text);
+    color: var(--color-secondary-text);
     transition: color 150ms;
 
-    &--on-dark {
-      color: var(--color-surface);
+    .top-app-bar__link:hover & {
+      color: var(--color-primary-text);
     }
   }
   

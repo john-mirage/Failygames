@@ -15,7 +15,7 @@ import thirdQualificationJson from "@data/q3.json";
 function handleScroll() {
   const currentScrollY = window.scrollY;
   document.documentElement.style.setProperty('--scroll-y', `${currentScrollY}px`);
-  fadeTopAppBarOnScroll();
+  //fadeTopAppBarOnScroll();
   showFloatingActionButtonOnScroll();
   document.documentElement.style.setProperty('--previous-scroll-y', `${currentScrollY}px`);
 }
@@ -38,7 +38,7 @@ function mountGlobalListeners() {
 /**
  * Initialization.
  */
-fadeTopAppBarOnScroll(window.scrollY);
+//fadeTopAppBarOnScroll(window.scrollY);
 mountGlobalListeners();
 mountDrawer();
 mountTimer();

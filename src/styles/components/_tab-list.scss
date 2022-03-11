@@ -43,6 +43,10 @@
     color: var(--color-secondary-text);
     transition: color 150ms;
     
+    &:hover {
+      color: var(--color-primary-text);
+    }
+
     &:last-child {
       border-bottom: none;
     }
