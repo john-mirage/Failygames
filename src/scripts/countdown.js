@@ -1,14 +1,5 @@
 import { gsap } from 'gsap';
 
-const daysCurrentTime = document.getElementsByClassName("days-current-time");
-const daysNextTime = document.getElementsByClassName("days-next-time");
-const hoursCurrentTime = document.getElementsByClassName("hours-current-time");
-const hoursNextTime = document.getElementsByClassName("hours-next-time");
-const minutesCurrentTime = document.getElementsByClassName("minutes-current-time");
-const minutesNextTime = document.getElementsByClassName("minutes-next-time");
-const secondsCurrentTime = document.getElementsByClassName("seconds-current-time");
-const secondsNextTime = document.getElementsByClassName("seconds-next-time");
-
 const EVENT_DATE_TIME = "2022-03-20T20:00:00";
 
 const flipAnimationOptions = { rotateX: -180, duration: 0.5 };
@@ -17,8 +8,9 @@ class Countdown {
 
     /**
      * @constructor
+     * @param {object} timeHtmlElements - HTML elements used to display the time.
      */
-    constructor() {
+    constructor(timeHtmlElements) {
         this.timeLeft = this.getTimeLeft();
         this.daysLeft = 0;
         this.hoursLeft = 0;
@@ -28,6 +20,10 @@ class Countdown {
         this.hoursAnimation = false;
         this.minutesAnimation = false;
         this.secondsFlipAnimation = false;
+        this.daysHtmlElements = timeHtmlElements.days;
+        this.hoursHtmlElements = timeHtmlElements.hours;
+        this.minutesHtmlElements = timeHtmlElements.minutes;
+        this.secondsHtmlElements = timeHtmlElements.seconds;
         if (this.timeLeft <= 0) {
             this.launchFireworks();
         } else {
@@ -81,8 +77,8 @@ class Countdown {
     displayDays() {
         const nextDaysLeft = this.daysLeft - 1;
         for (let index = 0; index < 2; index++) {
-            daysCurrentTime[index].innerText = this.formatTimeUnit(this.daysLeft);
-            daysNextTime[index].innerText = this.formatTimeUnit(nextDaysLeft);
+            this.daysHtmlElements.current[index].innerText = this.formatTimeUnit(this.daysLeft);
+            this.daysHtmlElements.next[index].innerText = this.formatTimeUnit(nextDaysLeft);
         }
         if (!this.initialCall) {
             if (!this.daysAnimation) {
@@ -100,8 +96,8 @@ class Countdown {
     displayHours() {
         const nextHoursLeft = this.hoursLeft <= 0 ? 23 : this.hoursLeft - 1;
         for (let index = 0; index < 2; index++) {
-            hoursCurrentTime[index].innerText = this.formatTimeUnit(this.hoursLeft);
-            hoursNextTime[index].innerText = this.formatTimeUnit(nextHoursLeft);
+            this.hoursHtmlElements.current[index].innerText = this.formatTimeUnit(this.hoursLeft);
+            this.hoursHtmlElements.next[index].innerText = this.formatTimeUnit(nextHoursLeft);
         }
         if (!this.initialCall) {
             if (!this.hoursAnimation) {
@@ -119,8 +115,8 @@ class Countdown {
     displayMinutes() {
         const nextMinutesLeft = this.minutesLeft <= 0 ? 59 : this.minutesLeft - 1;
         for (let index = 0; index < 2; index++) {
-            minutesCurrentTime[index].innerText = this.formatTimeUnit(this.minutesLeft);
-            minutesNextTime[index].innerText = this.formatTimeUnit(nextMinutesLeft);
+            this.minutesHtmlElements.current[index].innerText = this.formatTimeUnit(this.minutesLeft);
+            this.minutesHtmlElements.next[index].innerText = this.formatTimeUnit(nextMinutesLeft);
         }
         if (!this.initialCall) {
             if (!this.minutesAnimation) {
@@ -138,8 +134,8 @@ class Countdown {
     displaySeconds() {
         const nextSecondsLeft = this.secondsLeft <= 0 ? 59 : this.secondsLeft - 1;
         for (let index = 0; index < 2; index++) {
-            secondsCurrentTime[index].innerText = this.formatTimeUnit(this.secondsLeft);
-            secondsNextTime[index].innerText = this.formatTimeUnit(nextSecondsLeft);
+            this.secondsHtmlElements.current[index].innerText = this.formatTimeUnit(this.secondsLeft);
+            this.secondsHtmlElements.next[index].innerText = this.formatTimeUnit(nextSecondsLeft);
         }
         if (!this.initialCall) {
             if (!this.secondsFlipAnimation) {

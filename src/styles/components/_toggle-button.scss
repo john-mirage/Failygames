@@ -3,6 +3,7 @@
     flex-direction: row;
     justify-content: flex-start;
     align-items: center;
+    cursor: pointer;
 
     &__icon {
         width: 2.4rem;
@@ -11,6 +12,7 @@
     }
 
     &__background {
+        display: block;
         width: 5.6rem;
         height: 3.2rem;
         background-color: var(--color-divider);
@@ -19,10 +21,10 @@
         margin-left: 1rem;
         margin-right: 1rem;
         padding: 0.6rem;
-        cursor: pointer;
     }
 
     &__dot {
+        display: block;
         width: 2rem;
         height: 2rem;
         border-radius: 9999px;
@@ -30,7 +32,7 @@
         box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
         transition: transform 300ms;
 
-        &--active {
+        .toggle-button--active .toggle-button__background & {
             transform: translateX(2.4rem);
         }
     }
