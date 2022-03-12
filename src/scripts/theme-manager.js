@@ -4,10 +4,21 @@ class ThemeManager {
      * @constructor
      */
     constructor() {
-        const localStorageThemeIsDark = localStorage.theme === "dark";
-        const localStorageTheme = "theme" in localStorage;
+        const localStorageHasTheme = "theme" in localStorage;
         const operatingSystemThemeIsDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-        if (localStorageThemeIsDark || (!localStorageTheme && operatingSystemThemeIsDark)) {
+        if (localStorageHasTheme) {
+            const localTheme = localStorage.getItem("theme");
+            switch (localTheme) {
+                case "light":
+                    this.setLightTheme();
+                    break;
+                case "dark":
+                    this.setDarkTheme();
+                    break;
+                default:
+                    throw new Error("The theme is invalid");
+            }
+        } else if (operatingSystemThemeIsDark) {
             this.setDarkTheme();
         } else {
             this.setLightTheme();
@@ -18,12 +29,13 @@ class ThemeManager {
      * Set the local storage theme.
      */
     setLocalTheme() {
+        const localTheme = localStorage.getItem("theme");
         switch (this.theme) {
             case "light":
-                if (localStorage.theme !== "dark") localStorage.theme = "light";
+                if (localTheme !== "light") localStorage.setItem("theme", "light");
                 break;
             case "dark":
-                if (localStorage.theme !== "light") localStorage.theme = "dark";
+                if (localTheme !== "dark") localStorage.setItem("theme", "dark");
                 break;
             default:
                 throw new Error("The theme is invalid");
