@@ -1,5 +1,4 @@
 import { gsap } from 'gsap';
-import { sum } from 'lodash';
 
 const daysCurrentTime = document.getElementsByClassName("days-current-time");
 const daysNextTime = document.getElementsByClassName("days-next-time");
