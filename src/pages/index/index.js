@@ -137,7 +137,14 @@ const swiper = new Swiper("#swiper-content", {
 
 const leaderboardSearchBar = document.getElementById("leaderboard-search-bar");
 
+function debounceSearch(leaderboardSearch, userInput) {
+    leaderboardSearch.search(userInput);
+}
+
+const debouncedSearch = debounce(debounceSearch, 200);
+
 swiper.on('slideChange', () => {
+    debouncedSearch.cancel();
     leaderboardSearchBar.value = "";
     leaderboards.forEach((leaderboard) => {
         if (leaderboard.hasBeenSearched) leaderboard.displayTableBody();
@@ -146,8 +153,6 @@ swiper.on('slideChange', () => {
 
 leaderboardSearchBar.addEventListener("keyup", (event) => {
     const userInput = event.target.value;
-    console.log(swiper.activeIndex)
     const leaderboardSearch = new LeaderboardSearch(leaderboards[swiper.activeIndex]);
-    //const debouncedLeaderboardSearch = debounce(leaderboardSearch.search, 500);
-    leaderboardSearch.search(userInput);
+    debouncedSearch(leaderboardSearch, userInput)
 });

@@ -17,6 +17,7 @@ class LeaderboardSearch {
      * @param {string} userInput - The user search input. 
      */
     search(userInput) {
+        console.log("called with -> " + userInput)
         if (userInput.length > 0) {
             const results = this.fuse.search(userInput).map((result) => result.item);
             this.leaderboard.displayTableBody(results);
