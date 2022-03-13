@@ -3,6 +3,14 @@ const { defineConfig } = require('vite')
 
 // https://vitejs.dev/config/
 export default defineConfig({
+    build: {
+        rollupOptions: {
+            input: {
+                main: resolve(__dirname, 'index.html'),
+                teams: resolve(__dirname, 'teams/index.html'),
+            },
+        },
+    },
     base: "/Failygames/",
     resolve: {
         alias: {
