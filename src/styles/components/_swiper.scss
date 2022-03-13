@@ -1,3 +1,5 @@
+@use '../variables';
+
 .swiper-tabs {
     border-bottom: 0.1rem solid var(--color-divider);
 }
@@ -29,4 +31,12 @@
 
 .swiper-slide--tabs:hover .swipper-tabs-text {
     color: var(--color-primary-text);
+}
+
+.swiper-tabs-text-desktop {
+    display: none;
+
+    @media screen and (min-width: variables.$screen-lg) {
+        display: inline;
+    }
 }

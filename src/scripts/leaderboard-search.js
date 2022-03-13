@@ -1,34 +1,29 @@
 import Fuse from "fuse.js";
-import { debounce } from "lodash";
 
 class LeaderboardSearch {
 
-    constructor(leaderboard, searchBarId) {
+    /**
+     * @constructor
+     * @param {Leaderboard} leaderboard - The leaderboard.
+     */
+    constructor(leaderboard) {
         this.leaderboard = leaderboard;
-        this.searchBar = document.getElementById(searchBarId);
-        this.fuse = new Fuse(this.leaderboard.rows, { keys: ["team"] });
+        this.fuse = new Fuse(this.leaderboard.tableRows, { keys: ["team"] });
     }
 
-    set current(leaderboard) {
-        this.fuse = new Fuse(this.leaderboard.rows, { keys: ["team"] });
-    }
-
-    loadSearch(leaderboard = this.leaderboard) {
-        const fuse = new Fuse(leaderboard.rows, { keys: ["team"] });
-        const debouncedSearch = debounce(this.search, 500);
-        this.searchBar.addEventListener("keyup", (event) => {
-            const userInput = event.target.value;
-            debouncedSearch(event, fuse, leaderboard.rows, leaderboard.table)
-        });
-    }
-
-    search() {
-        const userInput = event.target.value;
+    /**
+     * Search in the leaderboard.
+     * 
+     * @param {string} userInput - The user search input. 
+     */
+    search(userInput) {
         if (userInput.length > 0) {
-            const results = fuse.search(userInput).map((result) => result.item);
-            displayLeaderboardData(results, tableElement);
+            const results = this.fuse.search(userInput).map((result) => result.item);
+            this.leaderboard.displayTableBody(results);
+            this.leaderboard.hasBeenSearched = true;
         } else {
-            displayLeaderboardData(tableData, tableElement);
+            this.leaderboard.displayTableBody();
+            this.leaderboard.hasBeenSearched = false;
         }
     }
 
