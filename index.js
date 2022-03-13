@@ -2,7 +2,7 @@ import "swiper/scss";
 import "swiper/scss/thumbs";
 import { debounce } from "lodash";
 
-import "@pages/index/index.scss";
+import "./index.scss";
 import gsap from "gsap";
 import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 import FloatingActionButton from "@scripts/floating-action-button";
