@@ -1,16 +1,16 @@
-const VERTICAL_BREAKPOINT = 200;
+import { gsap } from 'gsap';
+
+const VERTICAL_BREAKPOINT = 100;
 
 class FloatingActionButton {
 
     /**
      * @constructor
-     * @param {HTMLElement} htmlElement - The FAB html element.
-     * @param {string} - The FAB active class.
+     * @param {string} htmlElementId - The FAB html element id.
      */
-    constructor(htmlElement, htmlElementActiveClass) {
+    constructor(htmlElementId) {
         this.isVisible = false;
-        this.htmlElementActiveClass = htmlElementActiveClass;
-        this.htmlElement = htmlElement;
+        this.htmlElement = document.getElementById(htmlElementId);
     }
 
     /**
@@ -18,7 +18,7 @@ class FloatingActionButton {
      */
     show() {
         if (!this.isVisible) {
-            this.htmlElement.classList.add(this.htmlElementActiveClass);
+            gsap.to(this.htmlElement, { y: "-1.6rem", duration: 0.3 });
             this.isVisible = true;
         }
     }
@@ -28,7 +28,7 @@ class FloatingActionButton {
      */
     hide() {
         if (this.isVisible) {
-            this.htmlElement.classList.remove(this.htmlElementActiveClass);
+            gsap.to(this.htmlElement, { y: "100%", duration: 0.3 });
             this.isVisible = false;
         }
     }
