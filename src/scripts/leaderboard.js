@@ -98,6 +98,7 @@ class Leaderboard {
      */
     displayTableHead() {
         const tableRow = document.createElement("tr");
+        this.tableColumns = ["position", ...this.tableColumns];
         this.tableColumns.forEach((tableColumn) => {
             const tableHeader = document.createElement("th");
             tableHeader.classList.add("leaderboard__header");

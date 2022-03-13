@@ -28,7 +28,9 @@ class Countdown {
             this.launchFireworks();
         } else {
             this.setTimeUnits();
-            this.countdown = setInterval(displayTime, 1000);
+            this.countdown = setInterval(() => {
+                this.displayTime();
+            }, 1000);
         }
         this.initialCall = true;
         this.displayTime();

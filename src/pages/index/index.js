@@ -6,6 +6,13 @@ import ThemeManager from "@scripts/theme-manager";
 import ToggleButton from "@scripts/toggle-button";
 import Drawer from "@scripts/drawer";
 import Scrim from "@scripts/scrim";
+import Leaderboard from "@scripts/leaderboard";
+import Countdown from "@scripts/countdown";
+import globalTableRows from "@data/global.json";
+import q1TableRows from "@data/q1.json";
+import q2TableRows from "@data/q2.json";
+import q3TableRows from "@data/q3.json";
+
 
 gsap.registerPlugin(ScrollToPlugin);
 
@@ -19,6 +26,49 @@ const themeToggleButton = new ToggleButton("theme-toggle-button", "toggle-button
 const floatingActionButton = new FloatingActionButton("floating-action-button", "floating-action-button--visible");
 const drawer = new Drawer("drawer");
 const scrim = new Scrim();
+
+const globalLeaderboard = new Leaderboard({
+    rows: globalTableRows,
+    head: "leaderboard-head-global",
+    body: "leaderboard-body-global",
+});
+
+const q1Leaderboard = new Leaderboard({
+    rows: q1TableRows,
+    head: "leaderboard-head-q1",
+    body: "leaderboard-body-q1",
+});
+
+const q2Leaderboard = new Leaderboard({
+    rows: q2TableRows,
+    head: "leaderboard-head-q2",
+    body: "leaderboard-body-q2",
+});
+
+const q3Leaderboard = new Leaderboard({
+    rows: q3TableRows,
+    head: "leaderboard-head-q3",
+    body: "leaderboard-body-q3",
+});
+
+const countdown = new Countdown({
+    days: {
+        current: document.getElementsByClassName("days-current-time"),
+        next: document.getElementsByClassName("days-next-time"),
+    },
+    hours: {
+        current: document.getElementsByClassName("hours-current-time"),
+        next: document.getElementsByClassName("hours-next-time"),
+    },
+    minutes: {
+        current: document.getElementsByClassName("minutes-current-time"),
+        next: document.getElementsByClassName("minutes-next-time"),
+    },
+    seconds: {
+        current: document.getElementsByClassName("seconds-current-time"),
+        next: document.getElementsByClassName("seconds-next-time"),
+    },
+});
 
 if (themeManager.theme === "dark") {
     themeToggleButton.activate();
@@ -58,71 +108,3 @@ hamburgerButton.addEventListener("click", () => {
     scrim.mount();
     scrim.htmlElement.addEventListener("click", handleDrawerClosing, { once: true });
 });
-
-/**
-
-scrim.addEventListener("click", () => {
-                this.unmount(scrim);
-            }, { once: true });
- *
- const drawer = document.getElementById("drawer");
-const hamburgerButton = document.getElementById("hamburger-button");
-const scrim = document.getElementById("scrim");
-
-const daysCurrentTime = document.getElementsByClassName("days-current-time");
-const daysNextTime = document.getElementsByClassName("days-next-time");
-const hoursCurrentTime = document.getElementsByClassName("hours-current-time");
-const hoursNextTime = document.getElementsByClassName("hours-next-time");
-const minutesCurrentTime = document.getElementsByClassName("minutes-current-time");
-const minutesNextTime = document.getElementsByClassName("minutes-next-time");
-const secondsCurrentTime = document.getElementsByClassName("seconds-current-time");
-const secondsNextTime = document.getElementsByClassName("seconds-next-time");
-
-import gsap from "gsap";
-import { ScrollToPlugin } from "gsap/ScrollToPlugin"
-
-* event.preventDefault();
-gsap.registerPlugin(ScrollToPlugin);
-gsap.to(window, {duration: 0.5, scrollTo: 0});
-
-function handleScroll() {
-const currentScrollY = window.scrollY;
-document.documentElement.style.setProperty('--scroll-y', `${currentScrollY}px`);
-//fadeTopAppBarOnScroll();
-showFloatingActionButtonOnScroll();
-document.documentElement.style.setProperty('--previous-scroll-y', `${currentScrollY}px`);
-}
-
-function handleResize() {
-closeDrawerOnDesktop();
-}
-
-function mountGlobalListeners() {
-window.addEventListener("scroll", handleScroll);
-window.addEventListener("resize", handleResize);
-}
-
-mountGlobalListeners();
-mountDrawer();
-mountTimer();
-mountFloatingActionButton();
-
-window.addEventListener("load", () => {
-document.body.classList.remove("preload");
-})
-
-const tabSwiper = new Swiper("#swiper-tabs", {
-slidesPerView: 3,
-loopedSlides: 5,
-resistanceRatio: 0,
-watchSlidesProgress: true,
-});
-const contentSwiper = new Swiper("#swiper-content", {
-autoHeight: true,
-resistanceRatio: 0,
-loopedSlides: 5,
-thumbs: {
-swiper: tabSwiper,
-},
-});
-*/
