@@ -14,6 +14,7 @@ class Leaderboard {
         this.tableHead = document.getElementById(table.head);
         this.tableBody = document.getElementById(table.body);
         this.tableColumns = this.getTableColumns();
+        this.hasBeenSearched = false;
         this.sortTable();
         this.displayTable();
     }
@@ -115,7 +116,7 @@ class Leaderboard {
      * @param {object[]} rows - The rows to display in the table.
      */
     displayTableBody(rows = this.tableRows) {
-        if (this.tableBody.hasChildNodes()) this.table.innerHTML = "";
+        if (this.tableBody.hasChildNodes()) this.tableBody.innerHTML = "";
         rows.forEach((row) => {
             const tableRow = document.createElement("tr");
             tableRow.classList.add("leaderboard__row");

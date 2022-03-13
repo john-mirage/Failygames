@@ -1,5 +1,6 @@
 import "swiper/scss";
 import "swiper/scss/thumbs";
+import { debounce } from "lodash";
 
 import "@pages/index/index.scss";
 import gsap from "gsap";
@@ -17,6 +18,7 @@ import q2TableRows from "@data/q2.json";
 import q3TableRows from "@data/q3.json";
 
 import Swiper, { Thumbs, Navigation } from 'swiper';
+import LeaderboardSearch from "@scripts/leaderboard-search";
 
 gsap.registerPlugin(ScrollToPlugin);
 
@@ -54,6 +56,8 @@ const q3Leaderboard = new Leaderboard({
     head: "leaderboard-head-q3",
     body: "leaderboard-body-q3",
 });
+
+const leaderboards = [globalLeaderboard, q1Leaderboard, q2Leaderboard, q3Leaderboard];
 
 const countdown = new Countdown({
     days: {
@@ -122,9 +126,27 @@ const tabsSwiper = new Swiper("#swiper-tabs", {
 });
 
 const swiper = new Swiper("#swiper-content", {
+    allowTouchMove: false,
     modules: [Navigation, Thumbs],
     spaceBetween: 10,
+    autoHeight: true,
     thumbs: {
         swiper: tabsSwiper,
     },
+});
+
+swiper.on('slideChange', () => {
+    leaderboards.forEach((leaderboard) => {
+        if (leaderboard.hasBeenSearched) leaderboard.displayTableBody();
+    });
+});
+
+const leaderboardSearchBar = document.getElementById("leaderboard-search-bar");
+
+leaderboardSearchBar.addEventListener("keyup", (event) => {
+    const userInput = event.target.value;
+    console.log(swiper.activeIndex)
+    const leaderboardSearch = new LeaderboardSearch(leaderboards[swiper.activeIndex]);
+    //const debouncedLeaderboardSearch = debounce(leaderboardSearch.search, 500);
+    leaderboardSearch.search(userInput);
 });
