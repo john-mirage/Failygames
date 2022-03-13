@@ -1,3 +1,6 @@
+import "swiper/scss";
+import "swiper/scss/thumbs";
+
 import "@pages/index/index.scss";
 import gsap from "gsap";
 import { ScrollToPlugin } from "gsap/ScrollToPlugin";
@@ -13,6 +16,7 @@ import q1TableRows from "@data/q1.json";
 import q2TableRows from "@data/q2.json";
 import q3TableRows from "@data/q3.json";
 
+import Swiper, { Thumbs, Navigation } from 'swiper';
 
 gsap.registerPlugin(ScrollToPlugin);
 
@@ -107,4 +111,20 @@ hamburgerButton.addEventListener("click", () => {
     drawer.open(currentScrollY);
     scrim.mount();
     scrim.htmlElement.addEventListener("click", handleDrawerClosing, { once: true });
+});
+
+const tabsSwiper = new Swiper("#swiper-tabs", {
+    allowTouchMove: false,
+    modules: [Navigation, Thumbs],
+    spaceBetween: 10,
+    slidesPerView: 4,
+    watchSlidesProgress: true,
+});
+
+const swiper = new Swiper("#swiper-content", {
+    modules: [Navigation, Thumbs],
+    spaceBetween: 10,
+    thumbs: {
+        swiper: tabsSwiper,
+    },
 });
