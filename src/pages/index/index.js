@@ -135,13 +135,14 @@ const swiper = new Swiper("#swiper-content", {
     },
 });
 
+const leaderboardSearchBar = document.getElementById("leaderboard-search-bar");
+
 swiper.on('slideChange', () => {
+    leaderboardSearchBar.value = "";
     leaderboards.forEach((leaderboard) => {
         if (leaderboard.hasBeenSearched) leaderboard.displayTableBody();
     });
 });
-
-const leaderboardSearchBar = document.getElementById("leaderboard-search-bar");
 
 leaderboardSearchBar.addEventListener("keyup", (event) => {
     const userInput = event.target.value;
