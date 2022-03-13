@@ -15,7 +15,6 @@ export default defineConfig({
     resolve: {
         alias: {
             '@data': resolve(__dirname, 'src/data'),
-            '@pages': resolve(__dirname, 'src/pages'),
             '@scripts': resolve(__dirname, 'src/scripts'),
             '@styles': resolve(__dirname, 'src/styles'),
             '@images': resolve(__dirname, 'src/images'),
