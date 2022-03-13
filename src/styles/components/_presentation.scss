@@ -6,11 +6,6 @@
   width: 100%;
   height: auto;
   margin-bottom: 10rem;
-  margin-top: -10vw;
-  
-  @media screen and (min-width: variables.$screen-sm) {
-    margin-top: -8rem;
-  }
   
   &__card {
     display: flex;
