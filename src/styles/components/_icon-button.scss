@@ -4,29 +4,24 @@
   display: flex;
   width: 4.8rem;
   height: 4.8rem;
+  margin-left: -1.2rem;
   border-radius: 9999px;
-  background-color: rgba(0, 0, 0, 0.1);
   border: none;
   cursor: pointer;
-  transition: background-color 150ms;
   
+  &:hover {
+    background-color: var(--color-divider);
+  }
+
   @media screen and (min-width: variables.$screen-lg) {
     display: none;
   }
   
-  &--on-dark {
-    background-color: rgba(255, 255, 255, 0.1);
-  }
-  
   &__icon {
     width: 2.4rem;
-    height: 2.4rem;
+    height: auto;
     margin: auto;
     fill: var(--color-secondary-text);
     transition: fill 150ms;
-
-    .icon-button--on-dark & {
-      fill: var(--color-surface);
-    }
   }
 }

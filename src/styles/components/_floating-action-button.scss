@@ -14,7 +14,7 @@
   box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
   border-radius: 9999px;
   cursor: pointer;
-  transition: transform 300ms, background-color 150ms;
+  transition: background-color 150ms;
   
   @media screen and (min-width: variables.$screen-sm) {
     width: 6.4rem;
@@ -23,10 +23,6 @@
   
   &:hover {
     background-color: var(--color-secondary);
-  }
-  
-  &--visible {
-    transform: translateY(-1.6rem);
   }
   
   &__icon {

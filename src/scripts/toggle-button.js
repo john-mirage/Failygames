@@ -17,7 +17,7 @@ class ToggleButton {
     toggle() {
         if (this.isActive) {
             this.deactivate();
-        } else if (!this.isActive) {
+        } else {
             this.activate();
         }
     }
