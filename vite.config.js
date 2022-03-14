@@ -8,6 +8,7 @@ export default defineConfig({
             input: {
                 main: resolve(__dirname, 'index.html'),
                 teams: resolve(__dirname, 'teams/index.html'),
+                qualifications: resolve(__dirname, 'qualifications/index.html'),
             },
         },
     },
