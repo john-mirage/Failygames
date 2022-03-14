@@ -12,10 +12,6 @@
   transform: translateX(-100%);
   overflow: hidden;
   
-  &--open {
-    transform: translateX(0);
-  }
-  
   &__logo {
     display: flex;
     flex-direction: row;

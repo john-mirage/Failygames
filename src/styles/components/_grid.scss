@@ -1,0 +1,17 @@
+@use '../variables';
+
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 2rem;
+    margin-bottom: 10rem;
+
+    @media screen and (min-width: variables.$screen-md) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media screen and (min-width: variables.$screen-lg) {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}

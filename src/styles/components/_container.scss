@@ -1,5 +1,14 @@
+@use '../variables';
 @use '../mixins';
 
 .container {
     @include mixins.container;
+
+    &--on-top-app-bar {
+        margin-top: 12.4rem;
+
+        @media screen and (min-width: variables.$screen-lg) {
+            margin-top: 14rem;
+        }
+    }
 }

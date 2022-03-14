@@ -1,0 +1,42 @@
+@use '../variables';
+
+.drawer-v2 {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 100;
+    width: 100%;
+    height: calc(100vh - 6.4rem);
+    background-color: var(--color-background);
+    box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+    transform: translateY(calc(100% - 6.4rem));
+    overflow: hidden;
+
+    @media screen and (min-width: variables.$screen-lg) {
+        height: calc(100vh - 8rem);
+        transform: translateY(calc(100% - 8rem));
+    }
+
+    &__header {
+        width: 100%;
+        height: 6.4rem;
+        cursor: pointer;
+        background-color: var(--color-divider);
+
+        @media screen and (min-width: variables.$screen-lg) {
+            height: 8rem;
+        }
+    }
+
+    &__title {
+        font-size: 1.6rem;
+        font-weight: 400;
+        line-height: 6.4rem;
+        color: #fff;
+        text-align: center;
+
+        @media screen and (min-width: variables.$screen-lg) {
+            line-height: 8rem;
+        }
+    }
+}
