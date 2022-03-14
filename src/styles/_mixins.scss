@@ -4,23 +4,27 @@
     width: 100%;
     padding-left: 1.6rem;
     padding-right: 1.6rem;
-    
+
     @media screen and (min-width: variables.$screen-sm) {
-      width: variables.$container-sm;
-      margin-left: auto;
-      margin-right: auto;
-      padding: 0;
+        width: variables.$container-sm;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 0;
     }
-    
+
     @media screen and (min-width: variables.$screen-md) {
-      width: variables.$container-md;
+        width: variables.$container-md;
     }
-    
+
     @media screen and (min-width: variables.$screen-lg) {
-      width: variables.$container-lg;
+        width: variables.$container-lg;
     }
-    
+
     @media screen and (min-width: variables.$screen-xl) {
-      width: variables.$container-xl;
+        width: variables.$container-xl;
+    }
+
+    @media screen and (min-width: variables.$screen-2xl) {
+        width: variables.$container-2xl;
     }
 }

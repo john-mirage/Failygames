@@ -6,7 +6,7 @@
 @use 'src/styles/components/icon-button';
 @use 'src/styles/components/hero';
 @use 'src/styles/components/countdown';
-@use 'src/styles/components/presentation';
+@use 'src/styles/components/feature';
 @use 'src/styles/components/leaderboard';
 @use 'src/styles/components/tab-list';
 @use 'src/styles/components/search-bar';
@@ -18,3 +18,7 @@
 @use 'src/styles/components/footer';
 @use 'src/styles/components/card';
 @use 'src/styles/components/swiper';
+
+@use 'src/styles/components/grid';
+@use 'src/styles/components/surface';
+@use 'src/styles/components/sponsor';
