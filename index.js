@@ -12,10 +12,10 @@ import Drawer from "@scripts/drawer";
 import Scrim from "@scripts/scrim";
 import Leaderboard from "@scripts/leaderboard";
 import Countdown from "@scripts/countdown";
-import globalTableRows from "@data/global.json";
-import q1TableRows from "@data/q1.json";
-import q2TableRows from "@data/q2.json";
-import q3TableRows from "@data/q3.json";
+import globalTableRows from "@data/leaderboard/global.json";
+import q1TableRows from "@data/leaderboard/q1.json";
+import q2TableRows from "@data/leaderboard/q2.json";
+import q3TableRows from "@data/leaderboard/q3.json";
 
 import Swiper, { Thumbs, Navigation } from 'swiper';
 import LeaderboardSearch from "@scripts/leaderboard-search";

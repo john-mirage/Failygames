@@ -6,6 +6,8 @@ import ThemeManager from "@scripts/theme-manager";
 import ToggleButton from "@scripts/toggle-button";
 import Drawer from "@scripts/drawer";
 import Scrim from "@scripts/scrim";
+import teams from "@data/teams.json";
+import TeamGrid from "@scripts/team-grid";
 
 gsap.registerPlugin(ScrollToPlugin);
 
@@ -19,6 +21,7 @@ const themeToggleButton = new ToggleButton("theme-toggle-button", "toggle-button
 const floatingActionButton = new FloatingActionButton("floating-action-button", "floating-action-button--visible");
 const drawer = new Drawer("drawer");
 const scrim = new Scrim();
+const teamGrid = new TeamGrid(teams, "team-cards");
 
 if (themeManager.theme === "dark") {
     themeToggleButton.activate();
