@@ -5,10 +5,16 @@
     @include mixins.container;
 
     &--on-top-app-bar {
-        margin-top: 12.4rem;
+        padding-top: 12.4rem;
 
         @media screen and (min-width: variables.$screen-lg) {
-            margin-top: 14rem;
+            padding-top: 14rem;
         }
+    }
+
+    &--screen {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
     }
 }
